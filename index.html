@@ -4,7 +4,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Lia's 18th Birthday 💜</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,6 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Parisienne&display=swap" rel="stylesheet">
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -24,27 +24,34 @@ html{
 
 body{
     font-family:"Montserrat",sans-serif;
-    color:#51405f;
-    background:
-        radial-gradient(circle at 15% 10%,#ffffff 0%,transparent 24%),
-        radial-gradient(circle at 85% 20%,rgba(255,255,255,.8),transparent 25%),
-        linear-gradient(145deg,#a98aca 0%,#c9b1df 42%,#f8f3fa 100%);
+    color:#574361;
     overflow-x:hidden;
+
+    background:
+        radial-gradient(circle at 15% 10%,rgba(255,255,255,.9),transparent 25%),
+        radial-gradient(circle at 85% 25%,rgba(255,255,255,.75),transparent 25%),
+        linear-gradient(145deg,#a889c8,#d4c0e6 50%,#faf7fc);
 }
 
-/* ================= OPENING ================= */
+
+/* ================= OPEN SCREEN ================= */
 
 .opening{
     position:fixed;
     inset:0;
-    z-index:9999;
+    z-index:99999;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     background:
-        radial-gradient(circle at 50% 25%,rgba(255,255,255,.95),transparent 28%),
-        linear-gradient(145deg,#9f7bc5,#d5c1e8 55%,#faf7fc);
-    transition:opacity 1s ease,visibility 1s ease;
+        radial-gradient(circle at 50% 25%,white,transparent 28%),
+        linear-gradient(145deg,#9d79c2,#d8c6e8,#fbf9fd);
+
+    transition:
+        opacity .9s ease,
+        visibility .9s ease;
 }
 
 .opening.hide{
@@ -55,107 +62,176 @@ body{
 
 .open-card{
     width:min(90%,450px);
-    min-height:590px;
+    min-height:580px;
+
     position:relative;
-    overflow:hidden;
 
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
+
     text-align:center;
 
     padding:45px 30px;
 
-    border-radius:230px 230px 35px 35px;
+    overflow:hidden;
+
+    border-radius:220px 220px 35px 35px;
 
     background:
         linear-gradient(
             145deg,
-            rgba(255,255,255,.9),
-            rgba(243,234,249,.72)
+            rgba(255,255,255,.92),
+            rgba(243,233,249,.75)
         );
 
     border:1px solid rgba(255,255,255,.95);
 
     box-shadow:
-        0 30px 80px rgba(67,43,88,.25),
-        inset 0 0 0 1px rgba(255,255,255,.7);
+        0 30px 80px rgba(67,43,88,.25);
 }
 
 .open-card:before{
     content:"";
+
     position:absolute;
     inset:15px;
-    border:1px solid rgba(116,85,142,.28);
-    border-radius:220px 220px 27px 27px;
+
+    border:1px solid rgba(119,88,143,.25);
+
+    border-radius:205px 205px 25px 25px;
+
+    pointer-events:none;
 }
 
 .open-label{
     font-size:10px;
-    letter-spacing:6px;
+    letter-spacing:5px;
     text-transform:uppercase;
-    color:#80638f;
+
+    color:#80658e;
+
     margin-bottom:25px;
 }
 
 .open-title{
     font-family:"Parisienne",cursive;
-    font-size:90px;
-    line-height:.9;
-    color:#74518f;
+
+    font-size:95px;
+    line-height:.85;
+
+    color:#76518f;
 }
 
 .open-age{
-    margin-top:20px;
+    margin-top:22px;
+
     font-family:"Cormorant Garamond",serif;
-    font-size:28px;
+
+    font-size:29px;
     letter-spacing:4px;
-    color:#614970;
+
+    color:#654d72;
 }
 
+
+/* ================= BUTTON ================= */
+
 .open-button{
+    position:relative;
+    z-index:20;
+
     margin-top:45px;
+
+    padding:17px 38px;
+
     border:0;
-    padding:16px 35px;
     border-radius:50px;
 
+    background:
+        linear-gradient(
+            135deg,
+            #80609b,
+            #ae91c7
+        );
+
     color:white;
-    background:linear-gradient(135deg,#80609b,#af92c8);
 
     font-family:"Montserrat",sans-serif;
+
     font-size:11px;
+    font-weight:500;
+
     letter-spacing:2px;
 
     cursor:pointer;
 
-    box-shadow:0 12px 30px rgba(75,48,97,.25);
-    transition:.3s ease;
+    box-shadow:
+        0 12px 30px rgba(73,45,95,.28);
+
+    -webkit-tap-highlight-color:transparent;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
 }
 
 .open-button:hover{
-    transform:translateY(-3px) scale(1.03);
+    transform:translateY(-3px);
 }
 
-/* ================= DECOR ================= */
+.open-button:active{
+    transform:scale(.96);
+}
+
+
+/* ================= SPARKLES ================= */
 
 .sparkle{
     position:absolute;
+
     color:white;
+
+    font-size:22px;
+
     text-shadow:0 0 15px white;
+
     animation:sparkle 3s infinite ease-in-out;
+
     pointer-events:none;
 }
 
-.s1{top:12%;left:8%;font-size:23px}
-.s2{top:28%;right:8%;font-size:15px;animation-delay:1s}
-.s3{bottom:25%;left:9%;font-size:14px;animation-delay:1.7s}
-.s4{bottom:12%;right:12%;font-size:22px;animation-delay:2.3s}
+.s1{
+    top:12%;
+    left:8%;
+}
+
+.s2{
+    top:27%;
+    right:8%;
+    font-size:15px;
+    animation-delay:1s;
+}
+
+.s3{
+    bottom:25%;
+    left:9%;
+    font-size:14px;
+    animation-delay:1.7s;
+}
+
+.s4{
+    bottom:12%;
+    right:12%;
+    animation-delay:2.3s;
+}
 
 @keyframes sparkle{
+
     0%,100%{
         opacity:.3;
-        transform:scale(.7) rotate(0deg);
+        transform:scale(.7) rotate(0);
     }
 
     50%{
@@ -164,44 +240,45 @@ body{
     }
 }
 
+
 .bow{
     position:absolute;
-    font-size:55px;
-    opacity:.75;
+    font-size:52px;
+    opacity:.7;
+    pointer-events:none;
 }
 
 .bow1{
     top:5%;
-    right:4%;
+    right:3%;
     transform:rotate(15deg);
 }
 
 .bow2{
     bottom:5%;
-    left:4%;
+    left:3%;
     transform:rotate(-15deg);
 }
+
 
 /* ================= MAIN ================= */
 
 main{
-    opacity:0;
-    transform:translateY(25px);
-    transition:1.2s ease;
-}
-
-main.show{
+    display:block;
     opacity:1;
-    transform:translateY(0);
 }
 
 section{
     width:100%;
     max-width:1100px;
+
     margin:auto;
+
     padding:110px 25px;
+
     position:relative;
 }
+
 
 /* ================= HERO ================= */
 
@@ -231,59 +308,73 @@ section{
 
 .photo-wrap:before{
     content:"";
+
     position:absolute;
     inset:-17px;
 
     border:1px solid rgba(255,255,255,.9);
+
     border-radius:50%;
+}
+
+.hero-photo{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:9px solid rgba(255,255,255,.85);
+
+    box-shadow:
+        0 25px 65px rgba(69,43,92,.25);
 }
 
 .photo-wrap:after{
     content:"✦";
 
     position:absolute;
+
     right:5px;
     top:-28px;
 
     color:white;
+
     font-size:40px;
+
     text-shadow:0 0 20px white;
-}
-
-.hero-photo{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-
-    border-radius:50%;
-    border:9px solid rgba(255,255,255,.82);
-
-    box-shadow:
-        0 25px 65px rgba(69,43,92,.25),
-        0 0 0 1px rgba(255,255,255,.9);
 }
 
 .kicker{
     text-transform:uppercase;
+
     letter-spacing:6px;
+
     font-size:10px;
+
     color:#765a87;
+
     margin-bottom:18px;
 }
 
 .name{
     font-family:"Parisienne",cursive;
+
     font-size:clamp(75px,14vw,135px);
+
     line-height:.85;
+
     color:#73508e;
-    text-shadow:0 6px 20px rgba(82,54,106,.12);
 }
 
 .age-big{
     margin-top:20px;
 
     font-family:"Cormorant Garamond",serif;
+
     font-size:34px;
+
     letter-spacing:4px;
 
     color:#624b70;
@@ -291,43 +382,61 @@ section{
 
 .hero-description{
     max-width:580px;
+
     margin:28px auto 0;
 
     font-size:13px;
+
     line-height:2;
 
     color:#67566e;
 }
 
-/* ================= DATE ================= */
 
-.center{
+/* ================= COMMON ================= */
+
+.center,
+.gallery,
+.rsvp{
     text-align:center;
 }
 
 .section-label{
     text-transform:uppercase;
+
     letter-spacing:5px;
+
     font-size:10px;
+
     color:#846a95;
+
     margin-bottom:20px;
 }
 
 .section-title{
     font-family:"Cormorant Garamond",serif;
+
     font-size:clamp(45px,8vw,72px);
+
     font-weight:500;
+
     color:#644a73;
 }
+
+
+/* ================= DATE ================= */
 
 .date-card{
     margin:50px auto 0;
 
     max-width:730px;
+
     min-height:210px;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
     gap:45px;
@@ -336,19 +445,23 @@ section{
 
     border-radius:38px;
 
-    background:rgba(255,255,255,.58);
+    background:rgba(255,255,255,.6);
 
     border:1px solid rgba(255,255,255,.9);
 
-    box-shadow:0 25px 70px rgba(70,44,91,.13);
+    box-shadow:
+        0 25px 70px rgba(70,44,91,.13);
 
     backdrop-filter:blur(14px);
 }
 
 .date-number{
     font-family:"Cormorant Garamond",serif;
+
     font-size:110px;
+
     line-height:.8;
+
     color:#795697;
 }
 
@@ -358,23 +471,32 @@ section{
 
 .month{
     font-family:"Cormorant Garamond",serif;
+
     font-size:42px;
+
     color:#624970;
 }
 
 .weekday{
     margin-top:8px;
+
     font-size:10px;
+
     letter-spacing:3px;
+
     text-transform:uppercase;
+
     color:#80688d;
 }
+
 
 /* ================= COUNTDOWN ================= */
 
 .countdown{
     display:flex;
+
     justify-content:center;
+
     flex-wrap:wrap;
 
     gap:15px;
@@ -387,32 +509,43 @@ section{
     height:105px;
 
     display:flex;
+
     flex-direction:column;
-    justify-content:center;
+
     align-items:center;
+
+    justify-content:center;
 
     border-radius:50%;
 
-    background:rgba(255,255,255,.67);
+    background:rgba(255,255,255,.68);
 
     border:1px solid rgba(255,255,255,.9);
 
-    box-shadow:0 15px 35px rgba(75,47,96,.12);
+    box-shadow:
+        0 15px 35px rgba(75,47,96,.12);
 }
 
 .time strong{
     font-family:"Cormorant Garamond",serif;
+
     font-size:34px;
+
     color:#71528a;
 }
 
 .time span{
     margin-top:4px;
+
     font-size:8px;
+
     letter-spacing:2px;
+
     text-transform:uppercase;
+
     color:#897193;
 }
+
 
 /* ================= VENUE ================= */
 
@@ -420,6 +553,7 @@ section{
     margin-top:55px;
 
     display:grid;
+
     grid-template-columns:repeat(2,1fr);
 
     gap:22px;
@@ -436,20 +570,23 @@ section{
 
     border:1px solid rgba(255,255,255,.9);
 
-    box-shadow:0 20px 55px rgba(71,45,93,.11);
-
-    backdrop-filter:blur(12px);
+    box-shadow:
+        0 20px 55px rgba(71,45,93,.11);
 }
 
 .icon{
     font-size:40px;
+
     margin-bottom:18px;
 }
 
 .venue-card h3{
     font-family:"Cormorant Garamond",serif;
+
     font-size:34px;
+
     font-weight:500;
+
     color:#684d77;
 }
 
@@ -457,6 +594,7 @@ section{
     margin-top:12px;
 
     font-size:13px;
+
     line-height:1.8;
 
     color:#75637e;
@@ -472,14 +610,12 @@ section{
     color:#76568d;
 
     font-size:10px;
+
     letter-spacing:2px;
 }
 
-/* ================= DRESS CODE ================= */
 
-.dress-code{
-    text-align:center;
-}
+/* ================= DRESS CODE ================= */
 
 .dress-box{
     position:relative;
@@ -495,8 +631,8 @@ section{
     background:
         linear-gradient(
             145deg,
-            rgba(255,255,255,.78),
-            rgba(244,236,249,.7)
+            rgba(255,255,255,.82),
+            rgba(244,236,249,.72)
         );
 
     border:1px solid rgba(255,255,255,.95);
@@ -507,31 +643,11 @@ section{
     overflow:hidden;
 }
 
-.dress-box:before{
-    content:"✦";
-
-    position:absolute;
-    top:20px;
-    left:25px;
-
-    color:#bda8ce;
-    font-size:24px;
-}
-
-.dress-box:after{
-    content:"✧";
-
-    position:absolute;
-    right:30px;
-    bottom:20px;
-
-    color:#bda8ce;
-    font-size:27px;
-}
-
 .dress-title{
     font-family:"Parisienne",cursive;
+
     font-size:64px;
+
     color:#775592;
 }
 
@@ -539,7 +655,9 @@ section{
     margin-top:10px;
 
     font-size:10px;
+
     letter-spacing:4px;
+
     text-transform:uppercase;
 
     color:#80688d;
@@ -549,7 +667,9 @@ section{
     margin-top:35px;
 
     display:flex;
+
     justify-content:center;
+
     gap:25px;
 
     flex-wrap:wrap;
@@ -557,15 +677,17 @@ section{
 
 .dress-option{
     width:210px;
+
     padding:25px 20px;
 
     border-radius:25px;
 
-    background:rgba(255,255,255,.72);
+    background:rgba(255,255,255,.75);
 
     border:1px solid rgba(255,255,255,.95);
 
-    box-shadow:0 12px 30px rgba(74,46,96,.09);
+    box-shadow:
+        0 12px 30px rgba(74,46,96,.09);
 }
 
 .dress-circle{
@@ -591,7 +713,9 @@ section{
 
 .dress-option h3{
     font-family:"Cormorant Garamond",serif;
+
     font-size:29px;
+
     font-weight:500;
 
     color:#684d77;
@@ -600,22 +724,21 @@ section{
 .dress-option p{
     margin-top:6px;
 
-    font-size:10px;
+    font-size:9px;
+
     letter-spacing:1px;
 
     color:#897291;
 }
 
-/* ================= GALLERY ================= */
 
-.gallery{
-    text-align:center;
-}
+/* ================= GALLERY ================= */
 
 .gallery-grid{
     margin-top:55px;
 
     display:grid;
+
     grid-template-columns:1fr 1fr;
 
     gap:22px;
@@ -628,7 +751,8 @@ section{
 
     border-radius:35px;
 
-    box-shadow:0 25px 55px rgba(69,42,91,.17);
+    box-shadow:
+        0 25px 55px rgba(69,42,91,.17);
 }
 
 .gallery-card:nth-child(2){
@@ -638,6 +762,7 @@ section{
 .gallery-card img{
     width:100%;
     height:100%;
+
     object-fit:cover;
 
     transition:.7s ease;
@@ -647,11 +772,8 @@ section{
     transform:scale(1.06);
 }
 
-/* ================= RSVP ================= */
 
-.rsvp{
-    text-align:center;
-}
+/* ================= RSVP ================= */
 
 .rsvp-box{
     max-width:650px;
@@ -666,9 +788,8 @@ section{
 
     border:1px solid rgba(255,255,255,.9);
 
-    box-shadow:0 25px 70px rgba(71,44,94,.14);
-
-    backdrop-filter:blur(12px);
+    box-shadow:
+        0 25px 70px rgba(71,44,94,.14);
 }
 
 form{
@@ -693,15 +814,8 @@ select{
     color:#5c4b65;
 
     font-family:"Montserrat",sans-serif;
+
     font-size:12px;
-}
-
-.input:focus,
-select:focus{
-    border-color:#a58ab9;
-
-    box-shadow:
-        0 0 0 4px rgba(166,137,187,.12);
 }
 
 .submit{
@@ -710,25 +824,27 @@ select:focus{
     padding:17px;
 
     border:0;
+
     border-radius:20px;
 
-    background:linear-gradient(135deg,#80619b,#ab8bc2);
+    background:
+        linear-gradient(
+            135deg,
+            #80619b,
+            #ab8bc2
+        );
 
     color:white;
 
     font-family:"Montserrat",sans-serif;
 
     font-size:11px;
+
     letter-spacing:1px;
 
     cursor:pointer;
-
-    transition:.3s;
 }
 
-.submit:hover{
-    transform:translateY(-2px);
-}
 
 /* ================= FOOTER ================= */
 
@@ -745,12 +861,13 @@ select:focus{
 }
 
 @keyframes heartbeat{
+
     0%,100%{
         transform:scale(1);
     }
 
     15%{
-        transform:scale(1.16);
+        transform:scale(1.15);
     }
 
     30%{
@@ -778,21 +895,24 @@ select:focus{
     color:#8b7595;
 }
 
+
 /* ================= FLOATING ================= */
 
 .floating{
     position:fixed;
+
     inset:0;
 
     pointer-events:none;
 
     overflow:hidden;
 
-    z-index:3;
+    z-index:2;
 }
 
 .float{
     position:absolute;
+
     bottom:-50px;
 
     animation:floatUp linear infinite;
@@ -800,30 +920,9 @@ select:focus{
     opacity:.45;
 }
 
-@keyframes floatUp{
-    from{
-        transform:translateY(0) rotate(0);
-        opacity:0;
-    }
-
-    15%{
-        opacity:.5;
-    }
-
-    85%{
-        opacity:.35;
-    }
-
-    to{
-        transform:translateY(-115vh) rotate(360deg);
-        opacity:0;
-    }
-}
-
 .f1{
     left:8%;
     animation-duration:13s;
-    font-size:20px;
 }
 
 .f2{
@@ -849,8 +948,29 @@ select:focus{
     left:90%;
     animation-duration:14s;
     animation-delay:5s;
-    font-size:20px;
 }
+
+@keyframes floatUp{
+
+    from{
+        transform:translateY(0) rotate(0);
+        opacity:0;
+    }
+
+    15%{
+        opacity:.5;
+    }
+
+    85%{
+        opacity:.35;
+    }
+
+    to{
+        transform:translateY(-115vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
 
 /* ================= MOBILE ================= */
 
@@ -866,7 +986,7 @@ select:focus{
     }
 
     .open-title{
-        font-size:72px;
+        font-size:74px;
     }
 
     .hero{
@@ -923,11 +1043,7 @@ select:focus{
     }
 
     .dress-title{
-        font-size:56px;
-    }
-
-    .dress-options{
-        gap:15px;
+        font-size:55px;
     }
 
     .dress-option{
@@ -966,25 +1082,18 @@ select:focus{
     .open-card{
         min-height:500px;
     }
-
-    .date-card{
-        gap:13px;
-    }
-
-    .date-number{
-        font-size:70px;
-    }
-
-    .month{
-        font-size:27px;
-    }
 }
+
 </style>
 </head>
 
+
 <body>
 
-<!-- ================= OPENING ================= -->
+
+<!-- ================================================= -->
+<!-- OPENING -->
+<!-- ================================================= -->
 
 <div class="opening" id="opening">
 
@@ -999,7 +1108,7 @@ select:focus{
         <div class="bow bow2">🎀</div>
 
         <div class="open-label">
-            You are invited
+            YOU ARE INVITED
         </div>
 
         <div class="open-title">
@@ -1010,7 +1119,12 @@ select:focus{
             18th Birthday
         </div>
 
-        <button class="open-button" onclick="openInvitation()">
+        <!-- ԿՈՃԱԿԸ -->
+        <button
+            type="button"
+            class="open-button"
+            id="openInvitationButton"
+        >
             ԲԱՑԵԼ ՀՐԱՎԵՐԸ
         </button>
 
@@ -1019,38 +1133,51 @@ select:focus{
 </div>
 
 
-<!-- FLOATING SPARKLES -->
+<!-- ================================================= -->
+<!-- FLOATING -->
+<!-- ================================================= -->
 
 <div class="floating">
+
     <div class="float f1">✦</div>
     <div class="float f2">✧</div>
     <div class="float f3">♡</div>
     <div class="float f4">✦</div>
     <div class="float f5">✧</div>
+
 </div>
 
 
+<!-- ================================================= -->
+<!-- MAIN -->
+<!-- ================================================= -->
+
 <main id="main">
 
-<!-- ================= HERO ================= -->
+
+<!-- HERO -->
 
 <section class="hero">
 
     <div class="hero-inner">
 
-        <!-- ՔՈ ԳԼԽԱՎՈՐ ՆԿԱՐԸ -->
+        <!--
+        Դիր քո նկարը այստեղ՝
+        photo.jpg
+        -->
+
         <div class="photo-wrap">
 
             <img
                 src="photo.jpg"
+                alt="Լիա"
                 class="hero-photo"
-                alt="Lia"
             >
 
         </div>
 
         <div class="kicker">
-            My special day
+            MY SPECIAL DAY
         </div>
 
         <h1 class="name">
@@ -1063,12 +1190,17 @@ select:focus{
 
         <p class="hero-description">
 
-            18-ը գալիս է միայն մեկ անգամ...
-            ու ես ուզում եմ այդ օրը կիսել իմ ամենասիրելի մարդկանց հետ։ 💜
+            18-ը գալիս է միայն մեկ անգամ... 💜
 
-            <br>
+            <br><br>
 
-            Սպասում եմ քեզ՝ միասին գեղեցիկ հիշողություններ ստեղծելու։
+            Ու ես ուզում եմ այդ գեղեցիկ օրը
+            կիսել իմ ամենասիրելի մարդկանց հետ։
+
+            <br><br>
+
+            Սպասում եմ քեզ՝ միասին
+            գեղեցիկ հիշողություններ ստեղծելու։ ✨
 
         </p>
 
@@ -1077,12 +1209,12 @@ select:focus{
 </section>
 
 
-<!-- ================= DATE ================= -->
+<!-- DATE -->
 
 <section class="center">
 
     <div class="section-label">
-        Save the date
+        SAVE THE DATE
     </div>
 
     <h2 class="section-title">
@@ -1102,7 +1234,7 @@ select:focus{
             </div>
 
             <div class="weekday">
-                Ուրբաթ · 2026
+                2026 · Ուրբաթ
             </div>
 
         </div>
@@ -1112,12 +1244,12 @@ select:focus{
 </section>
 
 
-<!-- ================= COUNTDOWN ================= -->
+<!-- COUNTDOWN -->
 
 <section class="center">
 
     <div class="section-label">
-        Until the party
+        UNTIL THE PARTY
     </div>
 
     <h2 class="section-title">
@@ -1151,12 +1283,12 @@ select:focus{
 </section>
 
 
-<!-- ================= VENUE ================= -->
+<!-- VENUE -->
 
 <section class="center">
 
     <div class="section-label">
-        Party details
+        PARTY DETAILS
     </div>
 
     <h2 class="section-title">
@@ -1195,13 +1327,14 @@ select:focus{
 
             <p>
                 Եկ միասին տոնենք<br>
-                իմ 18-ամյակը 💜
+                Լիայի 18-ամյակը 💜
             </p>
 
             <a
                 class="map"
                 href="https://www.google.com/maps/search/?api=1&query=Novella+Music+Hall"
                 target="_blank"
+                rel="noopener"
             >
                 ԲԱՑԵԼ ՔԱՐՏԵԶԸ →
             </a>
@@ -1213,16 +1346,16 @@ select:focus{
 </section>
 
 
-<!-- ================= DRESS CODE ================= -->
+<!-- DRESS CODE -->
 
-<section class="dress-code">
+<section class="center">
 
     <div class="section-label">
-        A little request
+        DRESS CODE
     </div>
 
     <h2 class="section-title">
-        Dress Code
+        A little request
     </h2>
 
     <div class="dress-box">
@@ -1273,12 +1406,12 @@ select:focus{
 </section>
 
 
-<!-- ================= GALLERY ================= -->
+<!-- GALLERY -->
 
 <section class="gallery">
 
     <div class="section-label">
-        Little memories
+        LITTLE MEMORIES
     </div>
 
     <h2 class="section-title">
@@ -1311,12 +1444,12 @@ select:focus{
 </section>
 
 
-<!-- ================= RSVP ================= -->
+<!-- RSVP -->
 
 <section class="rsvp">
 
     <div class="section-label">
-        Let me know
+        LET ME KNOW
     </div>
 
     <h2 class="section-title">
@@ -1325,7 +1458,7 @@ select:focus{
 
     <div class="rsvp-box">
 
-        <form onsubmit="sendRSVP(event)">
+        <form id="rsvpForm">
 
             <input
                 class="input"
@@ -1371,7 +1504,7 @@ select:focus{
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- FOOTER -->
 
 <footer class="footer">
 
@@ -1389,35 +1522,82 @@ select:focus{
 
 </footer>
 
+
 </main>
 
 
 <script>
 
-/* ================= OPEN ================= */
+/*
+=====================================================
+ԲԱՑԵԼ ՀՐԱՎԵՐԸ
+=====================================================
+*/
 
-function openInvitation(){
+document.addEventListener("DOMContentLoaded", function(){
 
-    document
-        .getElementById("opening")
-        .classList.add("hide");
+    const button =
+        document.getElementById("openInvitationButton");
 
-    document
-        .getElementById("main")
-        .classList.add("show");
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
-}
+    const opening =
+        document.getElementById("opening");
 
 
-/* ================= COUNTDOWN ================= */
+    if(button && opening){
+
+        button.addEventListener("click", function(){
+
+            opening.classList.add("hide");
+
+            document.body.style.overflowY = "auto";
+
+            setTimeout(function(){
+
+                opening.style.display = "none";
+
+            }, 1000);
+
+        });
+
+    }
+
+
+    /*
+    ================================================
+    RSVP
+    ================================================
+    */
+
+    const form =
+        document.getElementById("rsvpForm");
+
+
+    if(form){
+
+        form.addEventListener("submit",function(event){
+
+            event.preventDefault();
+
+            const button =
+                form.querySelector(".submit");
+
+            button.textContent =
+                "ՇՆՈՐՀԱԿԱԼՈՒԹՅՈՒՆ 💜";
+
+        });
+
+    }
+
+});
+
 
 /*
-   Այստեղ փոխիր ամսաթիվը,
-   եթե ծննդյան օրը ուրիշ օր է։
+=====================================================
+COUNTDOWN
+=====================================================
+
+Եթե ամսաթիվը փոխես,
+այստեղ էլ փոխիր նույն ամսաթիվը։
 */
 
 const birthdayDate =
@@ -1435,10 +1615,13 @@ function updateCountdown(){
 
     if(distance <= 0){
 
-        document.getElementById("days").innerText="00";
-        document.getElementById("hours").innerText="00";
-        document.getElementById("minutes").innerText="00";
-        document.getElementById("seconds").innerText="00";
+        document.getElementById("days").textContent="00";
+
+        document.getElementById("hours").textContent="00";
+
+        document.getElementById("minutes").textContent="00";
+
+        document.getElementById("seconds").textContent="00";
 
         return;
     }
@@ -1447,114 +1630,52 @@ function updateCountdown(){
     const days =
         Math.floor(
             distance /
-            (1000*60*60*24)
+            (1000 * 60 * 60 * 24)
         );
 
 
     const hours =
         Math.floor(
             (distance %
-            (1000*60*60*24)) /
-            (1000*60*60)
+            (1000 * 60 * 60 * 24)) /
+            (1000 * 60 * 60)
         );
 
 
     const minutes =
         Math.floor(
             (distance %
-            (1000*60*60)) /
-            (1000*60)
+            (1000 * 60 * 60)) /
+            (1000 * 60)
         );
 
 
     const seconds =
         Math.floor(
             (distance %
-            (1000*60)) /
+            (1000 * 60)) /
             1000
         );
 
 
-    document.getElementById("days").innerText =
+    document.getElementById("days").textContent =
         String(days).padStart(2,"0");
 
-    document.getElementById("hours").innerText =
+    document.getElementById("hours").textContent =
         String(hours).padStart(2,"0");
 
-    document.getElementById("minutes").innerText =
+    document.getElementById("minutes").textContent =
         String(minutes).padStart(2,"0");
 
-    document.getElementById("seconds").innerText =
+    document.getElementById("seconds").textContent =
         String(seconds).padStart(2,"0");
+
 }
 
 
 updateCountdown();
 
-setInterval(
-    updateCountdown,
-    1000
-);
-
-
-/* ================= RSVP ================= */
-
-function sendRSVP(event){
-
-    event.preventDefault();
-
-    const button =
-        event.target.querySelector(".submit");
-
-    button.innerText =
-        "ՇՆՈՐՀԱԿԱԼՈՒԹՅՈՒՆ 💜";
-
-}
-
-
-/* ================= SCROLL ANIMATION ================= */
-
-const observer =
-    new IntersectionObserver(
-        entries => {
-
-            entries.forEach(entry => {
-
-                if(entry.isIntersecting){
-
-                    entry.target.style.opacity="1";
-
-                    entry.target.style.transform=
-                        "translateY(0)";
-
-                }
-
-            });
-
-        },
-        {
-            threshold:.12
-        }
-    );
-
-
-document
-    .querySelectorAll(
-        ".venue-card,.dress-box,.gallery-card,.date-card,.rsvp-box"
-    )
-    .forEach(element => {
-
-        element.style.opacity="0";
-
-        element.style.transform=
-            "translateY(35px)";
-
-        element.style.transition=
-            "opacity .8s ease, transform .8s ease";
-
-        observer.observe(element);
-
-    });
+setInterval(updateCountdown,1000);
 
 </script>
 
