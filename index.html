@@ -3,13 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Լիայի 18-ամյակը</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Noto+Serif+Armenian:wght@400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -32,29 +35,55 @@ body.no-scroll{
 }
 
 /* BACKGROUND */
+
 body::before{
     content:"";
     position:fixed;
     inset:0;
     pointer-events:none;
+
     background:
-        radial-gradient(circle at 10% 15%, rgba(194,168,219,.22), transparent 25%),
-        radial-gradient(circle at 90% 30%, rgba(214,194,229,.2), transparent 28%),
-        radial-gradient(circle at 50% 90%, rgba(201,178,222,.18), transparent 30%);
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(194,168,219,.22),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 90% 30%,
+            rgba(214,194,229,.2),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 50% 90%,
+            rgba(201,178,222,.18),
+            transparent 30%
+        );
+
     z-index:-2;
 }
 
 /* OPENING */
+
 .opening{
     position:fixed;
     inset:0;
     z-index:9999;
+
     display:flex;
     justify-content:center;
     align-items:center;
+
     background:
-        radial-gradient(circle at center, #fff 0%, #faf6fc 45%, #eee5f4 100%);
-    transition:opacity 1s ease, visibility 1s ease;
+        radial-gradient(
+            circle at center,
+            #ffffff 0%,
+            #faf6fc 45%,
+            #eee5f4 100%
+        );
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
 }
 
 .opening.hide{
@@ -66,6 +95,7 @@ body::before{
 .opening::after{
     content:"";
     position:absolute;
+
     border:1px solid rgba(167,137,193,.35);
     border-radius:50%;
 }
@@ -113,13 +143,20 @@ body::before{
     border:1px solid #aa8bbb;
     background:rgba(255,255,255,.8);
     color:#725481;
+
     padding:15px 34px;
+
     border-radius:50px;
+
     font-family:'Noto Serif Armenian',sans-serif;
     font-size:14px;
+
     cursor:pointer;
+
     transition:.35s ease;
-    box-shadow:0 10px 30px rgba(115,82,129,.12);
+
+    box-shadow:
+        0 10px 30px rgba(115,82,129,.12);
 }
 
 .open-button:hover{
@@ -129,6 +166,7 @@ body::before{
 }
 
 /* DECOR */
+
 .decor{
     position:absolute;
     pointer-events:none;
@@ -148,13 +186,19 @@ body::before{
 .pearl{
     width:8px;
     height:8px;
+
     border-radius:50%;
+
     background:white;
+
     border:1px solid #d8c9df;
-    box-shadow:0 2px 7px rgba(130,100,145,.18);
+
+    box-shadow:
+        0 2px 7px rgba(130,100,145,.18);
 }
 
 /* MAIN */
+
 main{
     opacity:1;
 }
@@ -165,12 +209,16 @@ section{
 }
 
 /* HERO */
+
 .hero{
     min-height:100vh;
+
     display:flex;
     justify-content:center;
     align-items:center;
+
     text-align:center;
+
     overflow:hidden;
 }
 
@@ -182,10 +230,16 @@ section{
 .hero-photo{
     width:min(500px,90vw);
     height:min(620px,72vh);
-    margin:0 auto 35px;
-    border-radius:250px 250px 30px 30px;
+
+    margin:
+        0 auto 35px;
+
+    border-radius:
+        250px 250px 30px 30px;
+
     overflow:hidden;
     position:relative;
+
     box-shadow:
         0 25px 60px rgba(92,68,105,.15),
         0 0 0 12px rgba(255,255,255,.65);
@@ -194,43 +248,56 @@ section{
 .hero-photo img{
     width:100%;
     height:100%;
+
     object-fit:cover;
+
     display:block;
 }
 
 .hero-photo::after{
     content:"";
+
     position:absolute;
     inset:0;
-    background:linear-gradient(
-        to bottom,
-        transparent 55%,
-        rgba(69,48,78,.13)
-    );
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent 55%,
+            rgba(69,48,78,.13)
+        );
 }
 
 .hero-subtitle{
     font-size:12px;
     letter-spacing:5px;
     color:#9b7cad;
+
     margin-bottom:10px;
 }
 
 .hero-name{
     font-family:'Parisienne',cursive;
+
     font-size:100px;
+
     color:#7d5d8f;
+
     line-height:1;
 }
 
 .hero-age{
     font-size:17px;
+
     letter-spacing:6px;
+
     color:#77647f;
+
     margin-top:15px;
 }
 
 /* DATE */
+
 .date-section{
     text-align:center;
     padding-top:50px;
@@ -238,41 +305,63 @@ section{
 
 .date-card{
     width:min(700px,92vw);
+
     margin:auto;
+
     padding:45px 25px;
-    border:1px solid rgba(155,124,173,.35);
+
+    border:
+        1px solid rgba(155,124,173,.35);
+
     border-radius:30px;
-    background:rgba(255,255,255,.62);
-    box-shadow:0 20px 60px rgba(105,77,119,.08);
+
+    background:
+        rgba(255,255,255,.62);
+
+    box-shadow:
+        0 20px 60px rgba(105,77,119,.08);
+
     backdrop-filter:blur(8px);
 }
 
 .date-small{
     font-size:12px;
     letter-spacing:4px;
+
     color:#9b7cad;
+
     margin-bottom:15px;
 }
 
 .date-number{
     font-family:'Cormorant Garamond',serif;
+
     font-size:90px;
+
     color:#836294;
+
     line-height:.9;
 }
 
 .date-month{
     font-size:18px;
+
     letter-spacing:5px;
+
     margin-top:15px;
 }
 
 /* COUNTDOWN */
+
 .countdown{
     display:flex;
+
     justify-content:center;
+
     gap:30px;
+
     margin-top:35px;
+
     flex-wrap:wrap;
 }
 
@@ -282,36 +371,53 @@ section{
 
 .count-number{
     font-family:'Cormorant Garamond',serif;
+
     font-size:45px;
+
     color:#806091;
 }
 
 .count-label{
     font-size:10px;
+
     letter-spacing:2px;
+
     color:#9d8aa5;
 }
 
 /* VENUE */
+
 .venue-section{
     text-align:center;
 }
 
 .section-title{
     font-size:13px;
+
     letter-spacing:5px;
+
     color:#9877a9;
+
     margin-bottom:40px;
 }
 
 .venue-card{
     width:min(600px,92vw);
+
     margin:auto;
+
     padding:50px 25px;
-    background:rgba(255,255,255,.7);
-    border:1px solid rgba(158,126,177,.3);
+
+    background:
+        rgba(255,255,255,.7);
+
+    border:
+        1px solid rgba(158,126,177,.3);
+
     border-radius:35px;
-    box-shadow:0 25px 60px rgba(96,70,110,.08);
+
+    box-shadow:
+        0 25px 60px rgba(96,70,110,.08);
 }
 
 .venue-row{
@@ -324,20 +430,27 @@ section{
 
 .venue-label{
     font-size:11px;
+
     letter-spacing:4px;
+
     color:#a083ad;
+
     margin-bottom:9px;
 }
 
 .venue-value{
     font-family:'Cormorant Garamond',serif;
+
     font-size:38px;
+
     color:#70527e;
 }
 
 .venue-link{
     text-decoration:none;
+
     color:#70527e;
+
     transition:.3s;
 }
 
@@ -346,45 +459,66 @@ section{
 }
 
 /* DRESS CODE */
+
 .dress-section{
     text-align:center;
 }
 
 .dress-card{
     width:min(650px,92vw);
+
     margin:auto;
+
     padding:50px 25px;
-    background:rgba(255,255,255,.72);
+
+    background:
+        rgba(255,255,255,.72);
+
     border-radius:35px;
-    border:1px solid rgba(158,126,177,.3);
+
+    border:
+        1px solid rgba(158,126,177,.3);
 }
 
 .dress-text{
     font-size:17px;
+
     line-height:2;
+
     color:#66556e;
+
     margin-bottom:35px;
 }
 
 .dress-colors{
     display:flex;
+
     justify-content:center;
+
     gap:70px;
 }
 
 .dress-color{
     display:flex;
+
     flex-direction:column;
+
     align-items:center;
+
     gap:12px;
 }
 
 .color-circle{
     width:65px;
     height:65px;
+
     border-radius:50%;
-    border:1px solid #d5c8dc;
-    box-shadow:0 8px 25px rgba(100,75,115,.12);
+
+    border:
+        1px solid #d5c8dc;
+
+    box-shadow:
+        0 8px 25px rgba(100,75,115,.12);
 }
 
 .white{
@@ -392,39 +526,53 @@ section{
 }
 
 .lavender{
-    background:#c8b1d9;
+    background:#9b70b5;
 }
 
 .color-name{
     font-size:13px;
+
     color:#71577d;
 }
 
 /* GALLERY */
+
 .gallery{
     text-align:center;
 }
 
 .gallery-grid{
-    width:min(950px,94vw);
+    width:min(800px,94vw);
+
     margin:auto;
+
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:22px;
 }
 
 .gallery-item{
-    aspect-ratio:3/4;
+    aspect-ratio:4/5;
+
     border-radius:25px;
+
     overflow:hidden;
-    box-shadow:0 15px 35px rgba(94,68,108,.1);
+
+    box-shadow:
+        0 15px 35px rgba(94,68,108,.1);
 }
 
 .gallery-item img{
     width:100%;
     height:100%;
+
     object-fit:cover;
+
     display:block;
+
     transition:.6s ease;
 }
 
@@ -433,17 +581,25 @@ section{
 }
 
 /* RSVP */
+
 .rsvp{
     text-align:center;
 }
 
 .rsvp-card{
     width:min(600px,92vw);
+
     margin:auto;
+
     padding:45px 25px;
-    background:rgba(255,255,255,.75);
+
+    background:
+        rgba(255,255,255,.75);
+
     border-radius:35px;
-    border:1px solid rgba(158,126,177,.3);
+
+    border:
+        1px solid rgba(158,126,177,.3);
 }
 
 .form-group{
@@ -453,12 +609,22 @@ section{
 .form-group input,
 .form-group select{
     width:100%;
+
     padding:15px 18px;
-    border:1px solid #d9cce0;
+
+    border:
+        1px solid #d9cce0;
+
     border-radius:15px;
+
     background:#fff;
+
     color:#55435e;
-    font-family:'Noto Serif Armenian',sans-serif;
+
+    font-family:
+        'Noto Serif Armenian',
+        sans-serif;
+
     outline:none;
 }
 
@@ -469,56 +635,87 @@ section{
 
 .submit-button{
     margin-top:10px;
+
     border:none;
+
     background:#806091;
+
     color:white;
+
     padding:15px 35px;
+
     border-radius:50px;
-    font-family:'Noto Serif Armenian',sans-serif;
+
+    font-family:
+        'Noto Serif Armenian',
+        sans-serif;
+
     cursor:pointer;
+
     transition:.3s;
 }
 
 .submit-button:hover{
     background:#6e507d;
+
     transform:translateY(-2px);
 }
 
 .thanks{
     display:none;
+
     margin-top:25px;
+
     color:#806091;
+
     font-size:16px;
 }
 
 /* FOOTER */
+
 footer{
     text-align:center;
-    padding:90px 20px 45px;
+
+    padding:
+        90px 20px 45px;
 }
 
 .footer-main{
-    font-family:'Cormorant Garamond',serif;
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
     font-size:42px;
+
     color:#795986;
+
     margin-bottom:20px;
 }
 
 .footer-name{
-    font-family:'Parisienne',cursive;
+    font-family:
+        'Parisienne',
+        cursive;
+
     font-size:55px;
+
     color:#9172a0;
+
     margin-bottom:45px;
 }
 
 .contact{
     font-size:11px;
+
     letter-spacing:1px;
+
     color:#9c8aa3;
+
     line-height:2;
 }
 
 /* FLOATING DECOR */
+
 .float1{
     top:12%;
     left:7%;
@@ -540,6 +737,7 @@ footer{
 }
 
 /* MOBILE */
+
 @media(max-width:700px){
 
     section{
@@ -552,14 +750,19 @@ footer{
 
     .hero{
         min-height:auto;
+
         padding-top:70px;
     }
 
     .hero-photo{
         width:88vw;
+
         height:115vw;
+
         max-height:none;
-        border-radius:180px 180px 25px 25px;
+
+        border-radius:
+            180px 180px 25px 25px;
     }
 
     .hero-name{
@@ -568,6 +771,7 @@ footer{
 
     .hero-age{
         font-size:14px;
+
         letter-spacing:4px;
     }
 
@@ -597,7 +801,9 @@ footer{
 
     .gallery-grid{
         grid-template-columns:1fr;
+
         width:88vw;
+
         gap:18px;
     }
 
@@ -621,355 +827,644 @@ footer{
         right:2%;
     }
 }
+
 </style>
 </head>
 
+
 <body class="no-scroll">
 
-<!-- OPENING -->
+
+<!-- ԲԱՑՄԱՆ ԷԿՐԱՆ -->
+
 <div class="opening" id="opening">
 
-    <div class="decor flower" style="top:12%;left:10%;">✿</div>
-    <div class="decor flower" style="bottom:15%;right:10%;">❀</div>
-    <div class="decor butterfly" style="top:20%;right:16%;">🦋</div>
-    <div class="decor butterfly" style="bottom:20%;left:15%;">🦋</div>
+    <div
+        class="decor flower"
+        style="top:12%;left:10%;"
+    >
+        ✿
+    </div>
+
+    <div
+        class="decor flower"
+        style="bottom:15%;right:10%;"
+    >
+        ❀
+    </div>
+
+    <div
+        class="decor butterfly"
+        style="top:20%;right:16%;"
+    >
+        🦋
+    </div>
+
+    <div
+        class="decor butterfly"
+        style="bottom:20%;left:15%;"
+    >
+        🦋
+    </div>
+
 
     <div class="opening-content">
 
-        <div class="small-title">ՀՐԱՎԵՐ</div>
+        <div class="small-title">
+            ՀՐԱՎԵՐ
+        </div>
 
-        <div class="opening-name">Լիա</div>
+        <div class="opening-name">
+            Լիա
+        </div>
 
-        <div class="opening-age">18 ՏԱՐԵԿԱՆ</div>
+        <div class="opening-age">
+            18 ՏԱՐԵԿԱՆ
+        </div>
 
-        <button class="open-button" id="openInvitationButton">
+        <button
+            class="open-button"
+            id="openInvitationButton"
+        >
             ԲԱՑԵԼ ՀՐԱՎԵՐԸ
         </button>
 
     </div>
+
 </div>
 
 
 <main id="mainContent">
 
-    <!-- HERO -->
-    <section class="hero">
 
-        <div class="decor flower float1">✿</div>
-        <div class="decor butterfly float2">🦋</div>
-        <div class="decor butterfly float3">🦋</div>
-        <div class="decor flower float4">❀</div>
+<!-- ԳԼԽԱՎՈՐ -->
 
-        <div class="hero-inner">
+<section class="hero">
 
-            <div class="hero-photo">
-                <img src="photo.jpg" alt="Լիա">
-            </div>
+    <div class="decor flower float1">
+        ✿
+    </div>
 
-            <div class="hero-subtitle">ԾՆՆԴՅԱՆ ՏԱՐԵԴԱՐՁ</div>
+    <div class="decor butterfly float2">
+        🦋
+    </div>
 
-            <div class="hero-name">Լիա</div>
+    <div class="decor butterfly float3">
+        🦋
+    </div>
 
-            <div class="hero-age">18 ՏԱՐԵԿԱՆ</div>
-
-        </div>
-    </section>
+    <div class="decor flower float4">
+        ❀
+    </div>
 
 
-    <!-- DATE -->
-    <section class="date-section">
+    <div class="hero-inner">
 
-        <div class="date-card">
+        <div class="hero-photo">
 
-            <div class="date-small">ԻՄ ՀԱՏՈՒԿ ՕՐԸ</div>
-
-            <div class="date-number">18</div>
-
-            <div class="date-month">ՍԵՊՏԵՄԲԵՐ</div>
-
-            <div class="countdown">
-
-                <div class="count-box">
-                    <div class="count-number" id="days">00</div>
-                    <div class="count-label">ՕՐ</div>
-                </div>
-
-                <div class="count-box">
-                    <div class="count-number" id="hours">00</div>
-                    <div class="count-label">ԺԱՄ</div>
-                </div>
-
-                <div class="count-box">
-                    <div class="count-number" id="minutes">00</div>
-                    <div class="count-label">ՐՈՊԵ</div>
-                </div>
-
-                <div class="count-box">
-                    <div class="count-number" id="seconds">00</div>
-                    <div class="count-label">ՎԱՅՐԿՅԱՆ</div>
-                </div>
-
-            </div>
+            <img
+                src="photo.jpg"
+                alt="Լիա"
+            >
 
         </div>
 
-    </section>
 
-
-    <!-- VENUE -->
-    <section class="venue-section">
-
-        <div class="section-title">ՏԵՂԵԿՈՒԹՅՈՒՆ</div>
-
-        <div class="venue-card">
-
-            <div class="venue-row">
-
-                <div class="venue-label">ԺԱՄԸ</div>
-
-                <div class="venue-value">
-                    19:00
-                </div>
-
-            </div>
-
-            <div class="venue-row">
-
-                <div class="venue-label">ՎԱՅՐԸ</div>
-
-                <div class="venue-value">
-                    <a
-                        class="venue-link"
-                        href="https://www.google.com/maps/search/?api=1&query=Novella+Music+Hall"
-                        target="_blank"
-                    >
-                        Novella Music Hall
-                    </a>
-                </div>
-
-            </div>
-
+        <div class="hero-subtitle">
+            ԾՆՆԴՅԱՆ ՏԱՐԵԴԱՐՁ
         </div>
 
-    </section>
 
-
-    <!-- DRESS CODE -->
-    <section class="dress-section">
-
-        <div class="section-title">ՀԱԳՈՒՍՏԻ ՈՃ</div>
-
-        <div class="dress-card">
-
-            <div class="dress-text">
-                Սիրով խնդրում եմ ընտրել<br>
-                սպիտակ կամ նարդոսի երանգի հագուստ։
-            </div>
-
-            <div class="dress-colors">
-
-                <div class="dress-color">
-                    <div class="color-circle white"></div>
-                    <div class="color-name">Սպիտակ</div>
-                </div>
-
-                <div class="dress-color">
-                    <div class="color-circle lavender"></div>
-                    <div class="color-name">Նարդոսագույն</div>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- GALLERY -->
-    <section class="gallery">
-
-        <div class="section-title">ՀԻՇԱՐԺԱՆ ՊԱՀԵՐ</div>
-
-        <div class="gallery-grid">
-
-            <div class="gallery-item">
-                <img src="photo2.jpg" alt="Լիա">
-            </div>
-
-            <div class="gallery-item">
-                <img src="photo3.jpg" alt="Լիա">
-            </div>
-
-            <div class="gallery-item">
-                <img src="photo4.jpg" alt="Լիա">
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- RSVP -->
-    <section class="rsvp">
-
-        <div class="section-title">ՄԱՍՆԱԿՑՈՒԹՅՈՒՆ</div>
-
-        <div class="rsvp-card">
-
-            <form id="rsvpForm">
-
-                <div class="form-group">
-                    <input
-                        type="text"
-                        placeholder="Անուն"
-                        required
-                    >
-                </div>
-
-                <div class="form-group">
-                    <input
-                        type="text"
-                        placeholder="Ազգանուն"
-                        required
-                    >
-                </div>
-
-                <div class="form-group">
-                    <select required>
-                        <option value="">Կկարողանա՞ք գալ</option>
-                        <option>Այո, սիրով</option>
-                        <option>Ցավոք, ոչ</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <input
-                        type="text"
-                        placeholder="Ո՞ւմ կողմից եք հրավիրված"
-                        required
-                    >
-                </div>
-
-                <button class="submit-button" type="submit">
-                    ՀԱՍՏԱՏԵԼ ՄԱՍՆԱԿՑՈՒԹՅՈՒՆԸ
-                </button>
-
-            </form>
-
-            <div class="thanks" id="thanks">
-                Շնորհակալություն 💜
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- FOOTER -->
-    <footer>
-
-        <div class="footer-main">
-            Սիրով սպասում եմ Ձեզ
-        </div>
-
-        <div class="footer-name">
+        <div class="hero-name">
             Լիա
         </div>
 
-        <div class="contact">
-            our.eventto@gmail.com<br>
-            eventto.am
+
+        <div class="hero-age">
+            18 ՏԱՐԵԿԱՆ
         </div>
 
-    </footer>
+    </div>
+
+</section>
+
+
+<!-- ՕՐ -->
+
+<section class="date-section">
+
+    <div class="date-card">
+
+        <div class="date-small">
+            ԻՄ ՀԱՏՈՒԿ ՕՐԸ
+        </div>
+
+
+        <div class="date-number">
+            18
+        </div>
+
+
+        <div class="date-month">
+            ՍԵՊՏԵՄԲԵՐ
+        </div>
+
+
+        <div class="countdown">
+
+            <div class="count-box">
+
+                <div
+                    class="count-number"
+                    id="days"
+                >
+                    00
+                </div>
+
+                <div class="count-label">
+                    ՕՐ
+                </div>
+
+            </div>
+
+
+            <div class="count-box">
+
+                <div
+                    class="count-number"
+                    id="hours"
+                >
+                    00
+                </div>
+
+                <div class="count-label">
+                    ԺԱՄ
+                </div>
+
+            </div>
+
+
+            <div class="count-box">
+
+                <div
+                    class="count-number"
+                    id="minutes"
+                >
+                    00
+                </div>
+
+                <div class="count-label">
+                    ՐՈՊԵ
+                </div>
+
+            </div>
+
+
+            <div class="count-box">
+
+                <div
+                    class="count-number"
+                    id="seconds"
+                >
+                    00
+                </div>
+
+                <div class="count-label">
+                    ՎԱՅՐԿՅԱՆ
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ՆՈՎԵԼԼԱ -->
+
+<section class="venue-section">
+
+    <div class="section-title">
+        ՏԵՂԵԿՈՒԹՅՈՒՆ
+    </div>
+
+
+    <div class="venue-card">
+
+        <div class="venue-row">
+
+            <div class="venue-label">
+                ԺԱՄԸ
+            </div>
+
+            <div class="venue-value">
+                19:00
+            </div>
+
+        </div>
+
+
+        <div class="venue-row">
+
+            <div class="venue-label">
+                ՎԱՅՐԸ
+            </div>
+
+            <div class="venue-value">
+
+                <a
+                    class="venue-link"
+                    href="https://www.google.com/maps/search/?api=1&query=Novella+Music+Hall"
+                    target="_blank"
+                >
+                    Novella Music Hall
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ՀԱԳՈՒՍՏ -->
+
+<section class="dress-section">
+
+    <div class="section-title">
+        ՀԱԳՈՒՍՏԻ ՈՃ
+    </div>
+
+
+    <div class="dress-card">
+
+        <div class="dress-text">
+            Խնդրում եմ ընտրել<br>
+            սպիտակ կամ մանուշակագույն հագուստ։
+        </div>
+
+
+        <div class="dress-colors">
+
+            <div class="dress-color">
+
+                <div class="color-circle white"></div>
+
+                <div class="color-name">
+                    Սպիտակ
+                </div>
+
+            </div>
+
+
+            <div class="dress-color">
+
+                <div class="color-circle lavender"></div>
+
+                <div class="color-name">
+                    Մանուշակագույն
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ՀԻՇԱՐԺԱՆ ՊԱՀԵՐ -->
+
+<section class="gallery">
+
+    <div class="section-title">
+        ՀԻՇԱՐԺԱՆ ՊԱՀԵՐ
+    </div>
+
+
+    <div class="gallery-grid">
+
+        <div class="gallery-item">
+
+            <img
+                src="photo2.jpg"
+                alt="Լիա"
+            >
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img
+                src="photo3.jpg"
+                alt="Լիա"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ՄԱՍՆԱԿՑՈՒԹՅՈՒՆ -->
+
+<section class="rsvp">
+
+    <div class="section-title">
+        ՄԱՍՆԱԿՑՈՒԹՅՈՒՆ
+    </div>
+
+
+    <div class="rsvp-card">
+
+        <form id="rsvpForm">
+
+
+            <div class="form-group">
+
+                <input
+                    type="text"
+                    placeholder="Անուն"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <input
+                    type="text"
+                    placeholder="Ազգանուն"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <select required>
+
+                    <option value="">
+                        Կկարողանա՞ք գալ
+                    </option>
+
+                    <option>
+                        Այո, սիրով
+                    </option>
+
+                    <option>
+                        Ցավոք, ոչ
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button
+                class="submit-button"
+                type="submit"
+            >
+                ՀԱՍՏԱՏԵԼ ՄԱՍՆԱԿՑՈՒԹՅՈՒՆԸ
+            </button>
+
+
+        </form>
+
+
+        <div
+            class="thanks"
+            id="thanks"
+        >
+            Շնորհակալություն 💜
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ՎԵՐՋ -->
+
+<footer>
+
+    <div class="footer-main">
+        Սիրով սպասում եմ Ձեզ
+    </div>
+
+
+    <div class="footer-name">
+        Լիա
+    </div>
+
+
+    <div class="contact">
+
+        our.eventto@gmail.com<br>
+
+        eventto.am
+
+    </div>
+
+</footer>
+
 
 </main>
 
 
 <script>
 
-/* OPEN INVITATION */
-document.addEventListener("DOMContentLoaded", function(){
+/* ԲԱՑԵԼ ՀՐԱՎԵՐԸ */
 
-    const button = document.getElementById("openInvitationButton");
-    const opening = document.getElementById("opening");
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
 
-    button.addEventListener("click", function(){
+        const button =
+            document.getElementById(
+                "openInvitationButton"
+            );
 
-        opening.classList.add("hide");
-        document.body.classList.remove("no-scroll");
-
-        setTimeout(function(){
-            opening.style.display = "none";
-        }, 1000);
-
-    });
-
-});
+        const opening =
+            document.getElementById(
+                "opening"
+            );
 
 
-/* COUNTDOWN */
-const targetDate = new Date("2026-09-18T19:00:00").getTime();
+        button.addEventListener(
+            "click",
+            function(){
+
+                opening.classList.add("hide");
+
+                document.body.classList.remove(
+                    "no-scroll"
+                );
+
+
+                setTimeout(
+                    function(){
+
+                        opening.style.display =
+                            "none";
+
+                    },
+                    1000
+                );
+
+            }
+        );
+
+    }
+);
+
+
+/* ՀԵՏՀԱՇՎԱՐԿ */
+
+const targetDate =
+    new Date(
+        "2026-09-18T19:00:00"
+    ).getTime();
+
 
 function updateCountdown(){
 
-    const now = new Date().getTime();
-    const distance = targetDate - now;
+    const now =
+        new Date().getTime();
+
+
+    const distance =
+        targetDate - now;
+
 
     if(distance <= 0){
 
-        document.getElementById("days").textContent = "00";
-        document.getElementById("hours").textContent = "00";
-        document.getElementById("minutes").textContent = "00";
-        document.getElementById("seconds").textContent = "00";
+        document.getElementById(
+            "days"
+        ).textContent = "00";
+
+
+        document.getElementById(
+            "hours"
+        ).textContent = "00";
+
+
+        document.getElementById(
+            "minutes"
+        ).textContent = "00";
+
+
+        document.getElementById(
+            "seconds"
+        ).textContent = "00";
+
 
         return;
     }
 
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
 
-    const hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) /
-        (1000 * 60 * 60)
-    );
+    const days =
+        Math.floor(
+            distance /
+            (1000 * 60 * 60 * 24)
+        );
 
-    const minutes = Math.floor(
-        (distance % (1000 * 60 * 60)) /
-        (1000 * 60)
-    );
 
-    const seconds = Math.floor(
-        (distance % (1000 * 60)) /
-        1000
-    );
+    const hours =
+        Math.floor(
+            (
+                distance %
+                (1000 * 60 * 60 * 24)
+            ) /
+            (1000 * 60 * 60)
+        );
 
-    document.getElementById("days").textContent =
+
+    const minutes =
+        Math.floor(
+            (
+                distance %
+                (1000 * 60 * 60)
+            ) /
+            (1000 * 60)
+        );
+
+
+    const seconds =
+        Math.floor(
+            (
+                distance %
+                (1000 * 60)
+            ) /
+            1000
+        );
+
+
+    document.getElementById(
+        "days"
+    ).textContent =
         String(days).padStart(2,"0");
 
-    document.getElementById("hours").textContent =
+
+    document.getElementById(
+        "hours"
+    ).textContent =
         String(hours).padStart(2,"0");
 
-    document.getElementById("minutes").textContent =
+
+    document.getElementById(
+        "minutes"
+    ).textContent =
         String(minutes).padStart(2,"0");
 
-    document.getElementById("seconds").textContent =
+
+    document.getElementById(
+        "seconds"
+    ).textContent =
         String(seconds).padStart(2,"0");
+
 }
 
+
 updateCountdown();
-setInterval(updateCountdown,1000);
+
+setInterval(
+    updateCountdown,
+    1000
+);
 
 
-/* RSVP */
-document.getElementById("rsvpForm").addEventListener("submit", function(e){
+/* ՄԱՍՆԱԿՑՈՒԹՅՈՒՆ */
 
-    e.preventDefault();
+document
+    .getElementById("rsvpForm")
+    .addEventListener(
+        "submit",
+        function(e){
 
-    this.style.display = "none";
+            e.preventDefault();
 
-    document.getElementById("thanks").style.display = "block";
 
-});
+            this.style.display =
+                "none";
+
+
+            document.getElementById(
+                "thanks"
+            ).style.display =
+                "block";
+
+        }
+    );
 
 </script>
 
