@@ -1,17 +1,15 @@
-```html
 <!DOCTYPE html>
 <html lang="hy">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lia's 18th Birthday 💜</title>
+<title>Լիայի 18-ամյակը</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Parisienne&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Noto+Serif+Armenian:wght@400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
 
 <style>
-
 *{
     margin:0;
     padding:0;
@@ -23,1640 +21,927 @@ html{
 }
 
 body{
-    font-family:"Montserrat",sans-serif;
-    color:#574361;
+    background:#f8f5fb;
+    color:#44384d;
+    font-family:'Noto Serif Armenian','Montserrat',sans-serif;
     overflow-x:hidden;
-
-    background:
-        radial-gradient(circle at 15% 10%,rgba(255,255,255,.9),transparent 25%),
-        radial-gradient(circle at 85% 25%,rgba(255,255,255,.75),transparent 25%),
-        linear-gradient(145deg,#a889c8,#d4c0e6 50%,#faf7fc);
 }
 
+body.no-scroll{
+    overflow:hidden;
+}
 
-/* ================= OPEN SCREEN ================= */
+/* BACKGROUND */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background:
+        radial-gradient(circle at 10% 15%, rgba(194,168,219,.22), transparent 25%),
+        radial-gradient(circle at 90% 30%, rgba(214,194,229,.2), transparent 28%),
+        radial-gradient(circle at 50% 90%, rgba(201,178,222,.18), transparent 30%);
+    z-index:-2;
+}
 
+/* OPENING */
 .opening{
     position:fixed;
     inset:0;
-    z-index:99999;
-
+    z-index:9999;
     display:flex;
-    align-items:center;
     justify-content:center;
-
+    align-items:center;
     background:
-        radial-gradient(circle at 50% 25%,white,transparent 28%),
-        linear-gradient(145deg,#9d79c2,#d8c6e8,#fbf9fd);
-
-    transition:
-        opacity .9s ease,
-        visibility .9s ease;
+        radial-gradient(circle at center, #fff 0%, #faf6fc 45%, #eee5f4 100%);
+    transition:opacity 1s ease, visibility 1s ease;
 }
 
 .opening.hide{
     opacity:0;
     visibility:hidden;
-    pointer-events:none;
 }
 
-.open-card{
-    width:min(90%,450px);
-    min-height:580px;
-
-    position:relative;
-
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-
-    text-align:center;
-
-    padding:45px 30px;
-
-    overflow:hidden;
-
-    border-radius:220px 220px 35px 35px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.92),
-            rgba(243,233,249,.75)
-        );
-
-    border:1px solid rgba(255,255,255,.95);
-
-    box-shadow:
-        0 30px 80px rgba(67,43,88,.25);
-}
-
-.open-card:before{
+.opening::before,
+.opening::after{
     content:"";
-
     position:absolute;
-    inset:15px;
-
-    border:1px solid rgba(119,88,143,.25);
-
-    border-radius:205px 205px 25px 25px;
-
-    pointer-events:none;
+    border:1px solid rgba(167,137,193,.35);
+    border-radius:50%;
 }
 
-.open-label{
-    font-size:10px;
+.opening::before{
+    width:500px;
+    height:500px;
+}
+
+.opening::after{
+    width:650px;
+    height:650px;
+}
+
+.opening-content{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    padding:30px;
+}
+
+.small-title{
+    font-size:12px;
     letter-spacing:5px;
-    text-transform:uppercase;
-
-    color:#80658e;
-
-    margin-bottom:25px;
+    color:#9a7aae;
+    margin-bottom:18px;
 }
 
-.open-title{
-    font-family:"Parisienne",cursive;
-
-    font-size:95px;
-    line-height:.85;
-
-    color:#76518f;
+.opening-name{
+    font-family:'Parisienne',cursive;
+    font-size:82px;
+    color:#806091;
+    line-height:1;
+    margin-bottom:12px;
 }
 
-.open-age{
-    margin-top:22px;
-
-    font-family:"Cormorant Garamond",serif;
-
-    font-size:29px;
-    letter-spacing:4px;
-
-    color:#654d72;
+.opening-age{
+    font-size:19px;
+    letter-spacing:7px;
+    color:#75617f;
+    margin-bottom:40px;
 }
-
-
-/* ================= BUTTON ================= */
 
 .open-button{
-    position:relative;
-    z-index:20;
-
-    margin-top:45px;
-
-    padding:17px 38px;
-
-    border:0;
+    border:1px solid #aa8bbb;
+    background:rgba(255,255,255,.8);
+    color:#725481;
+    padding:15px 34px;
     border-radius:50px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #80609b,
-            #ae91c7
-        );
-
-    color:white;
-
-    font-family:"Montserrat",sans-serif;
-
-    font-size:11px;
-    font-weight:500;
-
-    letter-spacing:2px;
-
+    font-family:'Noto Serif Armenian',sans-serif;
+    font-size:14px;
     cursor:pointer;
-
-    box-shadow:
-        0 12px 30px rgba(73,45,95,.28);
-
-    -webkit-tap-highlight-color:transparent;
-
-    transition:
-        transform .25s ease,
-        box-shadow .25s ease;
+    transition:.35s ease;
+    box-shadow:0 10px 30px rgba(115,82,129,.12);
 }
 
 .open-button:hover{
+    background:#806091;
+    color:white;
     transform:translateY(-3px);
 }
 
-.open-button:active{
-    transform:scale(.96);
-}
-
-
-/* ================= SPARKLES ================= */
-
-.sparkle{
+/* DECOR */
+.decor{
     position:absolute;
-
-    color:white;
-
-    font-size:22px;
-
-    text-shadow:0 0 15px white;
-
-    animation:sparkle 3s infinite ease-in-out;
-
     pointer-events:none;
 }
 
-.s1{
-    top:12%;
-    left:8%;
+.flower{
+    font-size:42px;
+    color:#a88ab8;
+    opacity:.65;
 }
 
-.s2{
-    top:27%;
-    right:8%;
-    font-size:15px;
-    animation-delay:1s;
+.butterfly{
+    color:#a187b1;
+    font-size:25px;
 }
 
-.s3{
-    bottom:25%;
-    left:9%;
-    font-size:14px;
-    animation-delay:1.7s;
+.pearl{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:white;
+    border:1px solid #d8c9df;
+    box-shadow:0 2px 7px rgba(130,100,145,.18);
 }
 
-.s4{
-    bottom:12%;
-    right:12%;
-    animation-delay:2.3s;
-}
-
-@keyframes sparkle{
-
-    0%,100%{
-        opacity:.3;
-        transform:scale(.7) rotate(0);
-    }
-
-    50%{
-        opacity:1;
-        transform:scale(1.3) rotate(20deg);
-    }
-}
-
-
-.bow{
-    position:absolute;
-    font-size:52px;
-    opacity:.7;
-    pointer-events:none;
-}
-
-.bow1{
-    top:5%;
-    right:3%;
-    transform:rotate(15deg);
-}
-
-.bow2{
-    bottom:5%;
-    left:3%;
-    transform:rotate(-15deg);
-}
-
-
-/* ================= MAIN ================= */
-
+/* MAIN */
 main{
-    display:block;
     opacity:1;
 }
 
 section{
-    width:100%;
-    max-width:1100px;
-
-    margin:auto;
-
-    padding:110px 25px;
-
     position:relative;
+    padding:100px 20px;
 }
 
-
-/* ================= HERO ================= */
-
+/* HERO */
 .hero{
     min-height:100vh;
-
     display:flex;
-    align-items:center;
     justify-content:center;
-
+    align-items:center;
     text-align:center;
+    overflow:hidden;
 }
 
 .hero-inner{
-    width:100%;
-    max-width:780px;
-}
-
-.photo-wrap{
-    width:min(78vw,390px);
-    height:min(78vw,390px);
-
-    margin:0 auto 42px;
-
+    width:min(900px,100%);
     position:relative;
 }
 
-.photo-wrap:before{
-    content:"";
-
-    position:absolute;
-    inset:-17px;
-
-    border:1px solid rgba(255,255,255,.9);
-
-    border-radius:50%;
+.hero-photo{
+    width:min(500px,90vw);
+    height:min(620px,72vh);
+    margin:0 auto 35px;
+    border-radius:250px 250px 30px 30px;
+    overflow:hidden;
+    position:relative;
+    box-shadow:
+        0 25px 60px rgba(92,68,105,.15),
+        0 0 0 12px rgba(255,255,255,.65);
 }
 
-.hero-photo{
+.hero-photo img{
     width:100%;
     height:100%;
-
     object-fit:cover;
-
-    border-radius:50%;
-
-    border:9px solid rgba(255,255,255,.85);
-
-    box-shadow:
-        0 25px 65px rgba(69,43,92,.25);
+    display:block;
 }
 
-.photo-wrap:after{
-    content:"✦";
-
+.hero-photo::after{
+    content:"";
     position:absolute;
-
-    right:5px;
-    top:-28px;
-
-    color:white;
-
-    font-size:40px;
-
-    text-shadow:0 0 20px white;
+    inset:0;
+    background:linear-gradient(
+        to bottom,
+        transparent 55%,
+        rgba(69,48,78,.13)
+    );
 }
 
-.kicker{
-    text-transform:uppercase;
+.hero-subtitle{
+    font-size:12px;
+    letter-spacing:5px;
+    color:#9b7cad;
+    margin-bottom:10px;
+}
 
+.hero-name{
+    font-family:'Parisienne',cursive;
+    font-size:100px;
+    color:#7d5d8f;
+    line-height:1;
+}
+
+.hero-age{
+    font-size:17px;
     letter-spacing:6px;
-
-    font-size:10px;
-
-    color:#765a87;
-
-    margin-bottom:18px;
+    color:#77647f;
+    margin-top:15px;
 }
 
-.name{
-    font-family:"Parisienne",cursive;
-
-    font-size:clamp(75px,14vw,135px);
-
-    line-height:.85;
-
-    color:#73508e;
+/* DATE */
+.date-section{
+    text-align:center;
+    padding-top:50px;
 }
 
-.age-big{
-    margin-top:20px;
+.date-card{
+    width:min(700px,92vw);
+    margin:auto;
+    padding:45px 25px;
+    border:1px solid rgba(155,124,173,.35);
+    border-radius:30px;
+    background:rgba(255,255,255,.62);
+    box-shadow:0 20px 60px rgba(105,77,119,.08);
+    backdrop-filter:blur(8px);
+}
 
-    font-family:"Cormorant Garamond",serif;
-
-    font-size:34px;
-
+.date-small{
+    font-size:12px;
     letter-spacing:4px;
-
-    color:#624b70;
+    color:#9b7cad;
+    margin-bottom:15px;
 }
 
-.hero-description{
-    max-width:580px;
+.date-number{
+    font-family:'Cormorant Garamond',serif;
+    font-size:90px;
+    color:#836294;
+    line-height:.9;
+}
 
-    margin:28px auto 0;
+.date-month{
+    font-size:18px;
+    letter-spacing:5px;
+    margin-top:15px;
+}
 
+/* COUNTDOWN */
+.countdown{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    margin-top:35px;
+    flex-wrap:wrap;
+}
+
+.count-box{
+    min-width:90px;
+}
+
+.count-number{
+    font-family:'Cormorant Garamond',serif;
+    font-size:45px;
+    color:#806091;
+}
+
+.count-label{
+    font-size:10px;
+    letter-spacing:2px;
+    color:#9d8aa5;
+}
+
+/* VENUE */
+.venue-section{
+    text-align:center;
+}
+
+.section-title{
     font-size:13px;
-
-    line-height:2;
-
-    color:#67566e;
+    letter-spacing:5px;
+    color:#9877a9;
+    margin-bottom:40px;
 }
 
+.venue-card{
+    width:min(600px,92vw);
+    margin:auto;
+    padding:50px 25px;
+    background:rgba(255,255,255,.7);
+    border:1px solid rgba(158,126,177,.3);
+    border-radius:35px;
+    box-shadow:0 25px 60px rgba(96,70,110,.08);
+}
 
-/* ================= COMMON ================= */
+.venue-row{
+    margin-bottom:32px;
+}
 
-.center,
-.gallery,
+.venue-row:last-child{
+    margin-bottom:0;
+}
+
+.venue-label{
+    font-size:11px;
+    letter-spacing:4px;
+    color:#a083ad;
+    margin-bottom:9px;
+}
+
+.venue-value{
+    font-family:'Cormorant Garamond',serif;
+    font-size:38px;
+    color:#70527e;
+}
+
+.venue-link{
+    text-decoration:none;
+    color:#70527e;
+    transition:.3s;
+}
+
+.venue-link:hover{
+    color:#9c79ae;
+}
+
+/* DRESS CODE */
+.dress-section{
+    text-align:center;
+}
+
+.dress-card{
+    width:min(650px,92vw);
+    margin:auto;
+    padding:50px 25px;
+    background:rgba(255,255,255,.72);
+    border-radius:35px;
+    border:1px solid rgba(158,126,177,.3);
+}
+
+.dress-text{
+    font-size:17px;
+    line-height:2;
+    color:#66556e;
+    margin-bottom:35px;
+}
+
+.dress-colors{
+    display:flex;
+    justify-content:center;
+    gap:70px;
+}
+
+.dress-color{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:12px;
+}
+
+.color-circle{
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    border:1px solid #d5c8dc;
+    box-shadow:0 8px 25px rgba(100,75,115,.12);
+}
+
+.white{
+    background:#fff;
+}
+
+.lavender{
+    background:#c8b1d9;
+}
+
+.color-name{
+    font-size:13px;
+    color:#71577d;
+}
+
+/* GALLERY */
+.gallery{
+    text-align:center;
+}
+
+.gallery-grid{
+    width:min(950px,94vw);
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.gallery-item{
+    aspect-ratio:3/4;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(94,68,108,.1);
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:.6s ease;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.05);
+}
+
+/* RSVP */
 .rsvp{
     text-align:center;
 }
 
-.section-label{
-    text-transform:uppercase;
-
-    letter-spacing:5px;
-
-    font-size:10px;
-
-    color:#846a95;
-
-    margin-bottom:20px;
+.rsvp-card{
+    width:min(600px,92vw);
+    margin:auto;
+    padding:45px 25px;
+    background:rgba(255,255,255,.75);
+    border-radius:35px;
+    border:1px solid rgba(158,126,177,.3);
 }
 
-.section-title{
-    font-family:"Cormorant Garamond",serif;
-
-    font-size:clamp(45px,8vw,72px);
-
-    font-weight:500;
-
-    color:#644a73;
-}
-
-
-/* ================= DATE ================= */
-
-.date-card{
-    margin:50px auto 0;
-
-    max-width:730px;
-
-    min-height:210px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:45px;
-
-    padding:35px;
-
-    border-radius:38px;
-
-    background:rgba(255,255,255,.6);
-
-    border:1px solid rgba(255,255,255,.9);
-
-    box-shadow:
-        0 25px 70px rgba(70,44,91,.13);
-
-    backdrop-filter:blur(14px);
-}
-
-.date-number{
-    font-family:"Cormorant Garamond",serif;
-
-    font-size:110px;
-
-    line-height:.8;
-
-    color:#795697;
-}
-
-.date-info{
-    text-align:left;
-}
-
-.month{
-    font-family:"Cormorant Garamond",serif;
-
-    font-size:42px;
-
-    color:#624970;
-}
-
-.weekday{
-    margin-top:8px;
-
-    font-size:10px;
-
-    letter-spacing:3px;
-
-    text-transform:uppercase;
-
-    color:#80688d;
-}
-
-
-/* ================= COUNTDOWN ================= */
-
-.countdown{
-    display:flex;
-
-    justify-content:center;
-
-    flex-wrap:wrap;
-
-    gap:15px;
-
-    margin-top:45px;
-}
-
-.time{
-    width:105px;
-    height:105px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border-radius:50%;
-
-    background:rgba(255,255,255,.68);
-
-    border:1px solid rgba(255,255,255,.9);
-
-    box-shadow:
-        0 15px 35px rgba(75,47,96,.12);
-}
-
-.time strong{
-    font-family:"Cormorant Garamond",serif;
-
-    font-size:34px;
-
-    color:#71528a;
-}
-
-.time span{
-    margin-top:4px;
-
-    font-size:8px;
-
-    letter-spacing:2px;
-
-    text-transform:uppercase;
-
-    color:#897193;
-}
-
-
-/* ================= VENUE ================= */
-
-.venue-grid{
-    margin-top:55px;
-
-    display:grid;
-
-    grid-template-columns:repeat(2,1fr);
-
-    gap:22px;
-}
-
-.venue-card{
-    padding:45px 30px;
-
-    text-align:center;
-
-    border-radius:34px;
-
-    background:rgba(255,255,255,.58);
-
-    border:1px solid rgba(255,255,255,.9);
-
-    box-shadow:
-        0 20px 55px rgba(71,45,93,.11);
-}
-
-.icon{
-    font-size:40px;
-
+.form-group{
     margin-bottom:18px;
 }
 
-.venue-card h3{
-    font-family:"Cormorant Garamond",serif;
-
-    font-size:34px;
-
-    font-weight:500;
-
-    color:#684d77;
-}
-
-.venue-card p{
-    margin-top:12px;
-
-    font-size:13px;
-
-    line-height:1.8;
-
-    color:#75637e;
-}
-
-.map{
-    display:inline-block;
-
-    margin-top:15px;
-
-    text-decoration:none;
-
-    color:#76568d;
-
-    font-size:10px;
-
-    letter-spacing:2px;
-}
-
-
-/* ================= DRESS CODE ================= */
-
-.dress-box{
-    position:relative;
-
-    max-width:760px;
-
-    margin:55px auto 0;
-
-    padding:55px 35px;
-
-    border-radius:42px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.82),
-            rgba(244,236,249,.72)
-        );
-
-    border:1px solid rgba(255,255,255,.95);
-
-    box-shadow:
-        0 25px 70px rgba(73,45,95,.14);
-
-    overflow:hidden;
-}
-
-.dress-title{
-    font-family:"Parisienne",cursive;
-
-    font-size:64px;
-
-    color:#775592;
-}
-
-.dress-subtitle{
-    margin-top:10px;
-
-    font-size:10px;
-
-    letter-spacing:4px;
-
-    text-transform:uppercase;
-
-    color:#80688d;
-}
-
-.dress-options{
-    margin-top:35px;
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:25px;
-
-    flex-wrap:wrap;
-}
-
-.dress-option{
-    width:210px;
-
-    padding:25px 20px;
-
-    border-radius:25px;
-
-    background:rgba(255,255,255,.75);
-
-    border:1px solid rgba(255,255,255,.95);
-
-    box-shadow:
-        0 12px 30px rgba(74,46,96,.09);
-}
-
-.dress-circle{
-    width:70px;
-    height:70px;
-
-    border-radius:50%;
-
-    margin:0 auto 17px;
-
-    box-shadow:
-        inset 0 0 0 1px rgba(110,85,125,.15),
-        0 8px 20px rgba(70,45,90,.12);
-}
-
-.white-circle{
+.form-group input,
+.form-group select{
+    width:100%;
+    padding:15px 18px;
+    border:1px solid #d9cce0;
+    border-radius:15px;
     background:#fff;
-}
-
-.lavender-circle{
-    background:#b79bd1;
-}
-
-.dress-option h3{
-    font-family:"Cormorant Garamond",serif;
-
-    font-size:29px;
-
-    font-weight:500;
-
-    color:#684d77;
-}
-
-.dress-option p{
-    margin-top:6px;
-
-    font-size:9px;
-
-    letter-spacing:1px;
-
-    color:#897291;
-}
-
-
-/* ================= GALLERY ================= */
-
-.gallery-grid{
-    margin-top:55px;
-
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:22px;
-}
-
-.gallery-card{
-    height:430px;
-
-    overflow:hidden;
-
-    border-radius:35px;
-
-    box-shadow:
-        0 25px 55px rgba(69,42,91,.17);
-}
-
-.gallery-card:nth-child(2){
-    transform:translateY(55px);
-}
-
-.gallery-card img{
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
-    transition:.7s ease;
-}
-
-.gallery-card:hover img{
-    transform:scale(1.06);
-}
-
-
-/* ================= RSVP ================= */
-
-.rsvp-box{
-    max-width:650px;
-
-    margin:50px auto 0;
-
-    padding:45px 35px;
-
-    border-radius:38px;
-
-    background:rgba(255,255,255,.63);
-
-    border:1px solid rgba(255,255,255,.9);
-
-    box-shadow:
-        0 25px 70px rgba(71,44,94,.14);
-}
-
-form{
-    display:grid;
-    gap:14px;
-}
-
-.input,
-select{
-    width:100%;
-
-    padding:16px 18px;
-
-    border-radius:17px;
-
-    border:1px solid rgba(117,88,137,.2);
-
+    color:#55435e;
+    font-family:'Noto Serif Armenian',sans-serif;
     outline:none;
-
-    background:rgba(255,255,255,.8);
-
-    color:#5c4b65;
-
-    font-family:"Montserrat",sans-serif;
-
-    font-size:12px;
 }
 
-.submit{
-    margin-top:7px;
+.form-group input:focus,
+.form-group select:focus{
+    border-color:#a989b9;
+}
 
-    padding:17px;
-
-    border:0;
-
-    border-radius:20px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #80619b,
-            #ab8bc2
-        );
-
+.submit-button{
+    margin-top:10px;
+    border:none;
+    background:#806091;
     color:white;
-
-    font-family:"Montserrat",sans-serif;
-
-    font-size:11px;
-
-    letter-spacing:1px;
-
+    padding:15px 35px;
+    border-radius:50px;
+    font-family:'Noto Serif Armenian',sans-serif;
     cursor:pointer;
+    transition:.3s;
 }
 
+.submit-button:hover{
+    background:#6e507d;
+    transform:translateY(-2px);
+}
 
-/* ================= FOOTER ================= */
+.thanks{
+    display:none;
+    margin-top:25px;
+    color:#806091;
+    font-size:16px;
+}
 
-.footer{
+/* FOOTER */
+footer{
     text-align:center;
-
-    padding:100px 25px 60px;
+    padding:90px 20px 45px;
 }
 
-.footer-heart{
-    font-size:38px;
-
-    animation:heartbeat 1.7s infinite;
+.footer-main{
+    font-family:'Cormorant Garamond',serif;
+    font-size:42px;
+    color:#795986;
+    margin-bottom:20px;
 }
 
-@keyframes heartbeat{
-
-    0%,100%{
-        transform:scale(1);
-    }
-
-    15%{
-        transform:scale(1.15);
-    }
-
-    30%{
-        transform:scale(1);
-    }
+.footer-name{
+    font-family:'Parisienne',cursive;
+    font-size:55px;
+    color:#9172a0;
+    margin-bottom:45px;
 }
 
-.footer-title{
-    margin-top:18px;
-
-    font-family:"Parisienne",cursive;
-
-    font-size:clamp(48px,9vw,80px);
-
-    color:#76538e;
+.contact{
+    font-size:11px;
+    letter-spacing:1px;
+    color:#9c8aa3;
+    line-height:2;
 }
 
-.footer-small{
-    margin-top:20px;
-
-    font-size:9px;
-
-    letter-spacing:3px;
-
-    color:#8b7595;
+/* FLOATING DECOR */
+.float1{
+    top:12%;
+    left:7%;
 }
 
-
-/* ================= FLOATING ================= */
-
-.floating{
-    position:fixed;
-
-    inset:0;
-
-    pointer-events:none;
-
-    overflow:hidden;
-
-    z-index:2;
+.float2{
+    top:25%;
+    right:8%;
 }
 
-.float{
-    position:absolute;
-
-    bottom:-50px;
-
-    animation:floatUp linear infinite;
-
-    opacity:.45;
+.float3{
+    bottom:15%;
+    left:10%;
 }
 
-.f1{
-    left:8%;
-    animation-duration:13s;
+.float4{
+    bottom:8%;
+    right:9%;
 }
 
-.f2{
-    left:27%;
-    animation-duration:17s;
-    animation-delay:2s;
-}
-
-.f3{
-    left:48%;
-    animation-duration:15s;
-    animation-delay:4s;
-    font-size:18px;
-}
-
-.f4{
-    left:70%;
-    animation-duration:19s;
-    animation-delay:1s;
-}
-
-.f5{
-    left:90%;
-    animation-duration:14s;
-    animation-delay:5s;
-}
-
-@keyframes floatUp{
-
-    from{
-        transform:translateY(0) rotate(0);
-        opacity:0;
-    }
-
-    15%{
-        opacity:.5;
-    }
-
-    85%{
-        opacity:.35;
-    }
-
-    to{
-        transform:translateY(-115vh) rotate(360deg);
-        opacity:0;
-    }
-}
-
-
-/* ================= MOBILE ================= */
-
+/* MOBILE */
 @media(max-width:700px){
 
     section{
-        padding:80px 18px;
+        padding:75px 16px;
     }
 
-    .open-card{
-        min-height:540px;
-        width:91%;
-    }
-
-    .open-title{
-        font-size:74px;
+    .opening-name{
+        font-size:65px;
     }
 
     .hero{
-        min-height:100svh;
+        min-height:auto;
+        padding-top:70px;
     }
 
-    .photo-wrap{
-        width:285px;
-        height:285px;
+    .hero-photo{
+        width:88vw;
+        height:115vw;
+        max-height:none;
+        border-radius:180px 180px 25px 25px;
     }
 
-    .name{
-        font-size:78px;
+    .hero-name{
+        font-size:75px;
     }
 
-    .hero-description{
-        padding:0 10px;
-        font-size:12px;
-    }
-
-    .date-card{
-        gap:20px;
-        min-height:175px;
-        padding:28px 20px;
+    .hero-age{
+        font-size:14px;
+        letter-spacing:4px;
     }
 
     .date-number{
-        font-size:82px;
+        font-size:75px;
     }
 
-    .month{
+    .countdown{
+        gap:18px;
+    }
+
+    .count-box{
+        min-width:70px;
+    }
+
+    .count-number{
+        font-size:36px;
+    }
+
+    .venue-value{
         font-size:31px;
     }
 
-    .weekday{
-        font-size:8px;
-    }
-
-    .time{
-        width:78px;
-        height:78px;
-    }
-
-    .time strong{
-        font-size:27px;
-    }
-
-    .venue-grid{
-        grid-template-columns:1fr;
-    }
-
-    .dress-box{
-        padding:45px 20px;
-    }
-
-    .dress-title{
-        font-size:55px;
-    }
-
-    .dress-option{
-        width:100%;
-        max-width:230px;
+    .dress-colors{
+        gap:40px;
     }
 
     .gallery-grid{
         grid-template-columns:1fr;
+        width:88vw;
+        gap:18px;
     }
 
-    .gallery-card{
-        height:400px;
+    .gallery-item{
+        aspect-ratio:4/5;
     }
 
-    .gallery-card:nth-child(2){
-        transform:none;
+    .footer-main{
+        font-size:34px;
     }
 
-    .rsvp-box{
-        padding:30px 20px;
-    }
-}
-
-@media(max-width:400px){
-
-    .photo-wrap{
-        width:260px;
-        height:260px;
+    .footer-name{
+        font-size:45px;
     }
 
-    .name{
-        font-size:70px;
+    .float1{
+        left:2%;
     }
 
-    .open-card{
-        min-height:500px;
+    .float2{
+        right:2%;
     }
 }
-
 </style>
 </head>
 
+<body class="no-scroll">
 
-<body>
-
-
-<!-- ================================================= -->
 <!-- OPENING -->
-<!-- ================================================= -->
-
 <div class="opening" id="opening">
 
-    <div class="open-card">
+    <div class="decor flower" style="top:12%;left:10%;">✿</div>
+    <div class="decor flower" style="bottom:15%;right:10%;">❀</div>
+    <div class="decor butterfly" style="top:20%;right:16%;">🦋</div>
+    <div class="decor butterfly" style="bottom:20%;left:15%;">🦋</div>
 
-        <span class="sparkle s1">✦</span>
-        <span class="sparkle s2">✧</span>
-        <span class="sparkle s3">✦</span>
-        <span class="sparkle s4">✧</span>
+    <div class="opening-content">
 
-        <div class="bow bow1">🎀</div>
-        <div class="bow bow2">🎀</div>
+        <div class="small-title">ՀՐԱՎԵՐ</div>
 
-        <div class="open-label">
-            YOU ARE INVITED
-        </div>
+        <div class="opening-name">Լիա</div>
 
-        <div class="open-title">
-            Lia
-        </div>
+        <div class="opening-age">18 ՏԱՐԵԿԱՆ</div>
 
-        <div class="open-age">
-            18th Birthday
-        </div>
-
-        <!-- ԿՈՃԱԿԸ -->
-        <button
-            type="button"
-            class="open-button"
-            id="openInvitationButton"
-        >
+        <button class="open-button" id="openInvitationButton">
             ԲԱՑԵԼ ՀՐԱՎԵՐԸ
         </button>
 
     </div>
-
 </div>
 
 
-<!-- ================================================= -->
-<!-- FLOATING -->
-<!-- ================================================= -->
+<main id="mainContent">
 
-<div class="floating">
+    <!-- HERO -->
+    <section class="hero">
 
-    <div class="float f1">✦</div>
-    <div class="float f2">✧</div>
-    <div class="float f3">♡</div>
-    <div class="float f4">✦</div>
-    <div class="float f5">✧</div>
+        <div class="decor flower float1">✿</div>
+        <div class="decor butterfly float2">🦋</div>
+        <div class="decor butterfly float3">🦋</div>
+        <div class="decor flower float4">❀</div>
 
-</div>
+        <div class="hero-inner">
+
+            <div class="hero-photo">
+                <img src="photo.jpg" alt="Լիա">
+            </div>
+
+            <div class="hero-subtitle">ԾՆՆԴՅԱՆ ՏԱՐԵԴԱՐՁ</div>
+
+            <div class="hero-name">Լիա</div>
+
+            <div class="hero-age">18 ՏԱՐԵԿԱՆ</div>
+
+        </div>
+    </section>
 
 
-<!-- ================================================= -->
-<!-- MAIN -->
-<!-- ================================================= -->
+    <!-- DATE -->
+    <section class="date-section">
 
-<main id="main">
+        <div class="date-card">
 
+            <div class="date-small">ԻՄ ՀԱՏՈՒԿ ՕՐԸ</div>
 
-<!-- HERO -->
+            <div class="date-number">18</div>
 
-<section class="hero">
+            <div class="date-month">ՍԵՊՏԵՄԲԵՐ</div>
 
-    <div class="hero-inner">
+            <div class="countdown">
 
-        <!--
-        Դիր քո նկարը այստեղ՝
-        photo.jpg
-        -->
+                <div class="count-box">
+                    <div class="count-number" id="days">00</div>
+                    <div class="count-label">ՕՐ</div>
+                </div>
 
-        <div class="photo-wrap">
+                <div class="count-box">
+                    <div class="count-number" id="hours">00</div>
+                    <div class="count-label">ԺԱՄ</div>
+                </div>
 
-            <img
-                src="photo.jpg"
-                alt="Լիա"
-                class="hero-photo"
-            >
+                <div class="count-box">
+                    <div class="count-number" id="minutes">00</div>
+                    <div class="count-label">ՐՈՊԵ</div>
+                </div>
+
+                <div class="count-box">
+                    <div class="count-number" id="seconds">00</div>
+                    <div class="count-label">ՎԱՅՐԿՅԱՆ</div>
+                </div>
+
+            </div>
 
         </div>
 
-        <div class="kicker">
-            MY SPECIAL DAY
+    </section>
+
+
+    <!-- VENUE -->
+    <section class="venue-section">
+
+        <div class="section-title">ՏԵՂԵԿՈՒԹՅՈՒՆ</div>
+
+        <div class="venue-card">
+
+            <div class="venue-row">
+
+                <div class="venue-label">ԺԱՄԸ</div>
+
+                <div class="venue-value">
+                    19:00
+                </div>
+
+            </div>
+
+            <div class="venue-row">
+
+                <div class="venue-label">ՎԱՅՐԸ</div>
+
+                <div class="venue-value">
+                    <a
+                        class="venue-link"
+                        href="https://www.google.com/maps/search/?api=1&query=Novella+Music+Hall"
+                        target="_blank"
+                    >
+                        Novella Music Hall
+                    </a>
+                </div>
+
+            </div>
+
         </div>
 
-        <h1 class="name">
+    </section>
+
+
+    <!-- DRESS CODE -->
+    <section class="dress-section">
+
+        <div class="section-title">ՀԱԳՈՒՍՏԻ ՈՃ</div>
+
+        <div class="dress-card">
+
+            <div class="dress-text">
+                Սիրով խնդրում եմ ընտրել<br>
+                սպիտակ կամ նարդոսի երանգի հագուստ։
+            </div>
+
+            <div class="dress-colors">
+
+                <div class="dress-color">
+                    <div class="color-circle white"></div>
+                    <div class="color-name">Սպիտակ</div>
+                </div>
+
+                <div class="dress-color">
+                    <div class="color-circle lavender"></div>
+                    <div class="color-name">Նարդոսագույն</div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- GALLERY -->
+    <section class="gallery">
+
+        <div class="section-title">ՀԻՇԱՐԺԱՆ ՊԱՀԵՐ</div>
+
+        <div class="gallery-grid">
+
+            <div class="gallery-item">
+                <img src="photo2.jpg" alt="Լիա">
+            </div>
+
+            <div class="gallery-item">
+                <img src="photo3.jpg" alt="Լիա">
+            </div>
+
+            <div class="gallery-item">
+                <img src="photo4.jpg" alt="Լիա">
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- RSVP -->
+    <section class="rsvp">
+
+        <div class="section-title">ՄԱՍՆԱԿՑՈՒԹՅՈՒՆ</div>
+
+        <div class="rsvp-card">
+
+            <form id="rsvpForm">
+
+                <div class="form-group">
+                    <input
+                        type="text"
+                        placeholder="Անուն"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <input
+                        type="text"
+                        placeholder="Ազգանուն"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <select required>
+                        <option value="">Կկարողանա՞ք գալ</option>
+                        <option>Այո, սիրով</option>
+                        <option>Ցավոք, ոչ</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <input
+                        type="text"
+                        placeholder="Ո՞ւմ կողմից եք հրավիրված"
+                        required
+                    >
+                </div>
+
+                <button class="submit-button" type="submit">
+                    ՀԱՍՏԱՏԵԼ ՄԱՍՆԱԿՑՈՒԹՅՈՒՆԸ
+                </button>
+
+            </form>
+
+            <div class="thanks" id="thanks">
+                Շնորհակալություն 💜
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="footer-main">
+            Սիրով սպասում եմ Ձեզ
+        </div>
+
+        <div class="footer-name">
             Լիա
-        </h1>
-
-        <div class="age-big">
-            18 YEARS OLD
         </div>
 
-        <p class="hero-description">
-
-            18-ը գալիս է միայն մեկ անգամ... 💜
-
-            <br><br>
-
-            Ու ես ուզում եմ այդ գեղեցիկ օրը
-            կիսել իմ ամենասիրելի մարդկանց հետ։
-
-            <br><br>
-
-            Սպասում եմ քեզ՝ միասին
-            գեղեցիկ հիշողություններ ստեղծելու։ ✨
-
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- DATE -->
-
-<section class="center">
-
-    <div class="section-label">
-        SAVE THE DATE
-    </div>
-
-    <h2 class="section-title">
-        Mark your calendar
-    </h2>
-
-    <div class="date-card">
-
-        <div class="date-number">
-            18
+        <div class="contact">
+            our.eventto@gmail.com<br>
+            eventto.am
         </div>
 
-        <div class="date-info">
-
-            <div class="month">
-                Սեպտեմբեր
-            </div>
-
-            <div class="weekday">
-                2026 · Ուրբաթ
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- COUNTDOWN -->
-
-<section class="center">
-
-    <div class="section-label">
-        UNTIL THE PARTY
-    </div>
-
-    <h2 class="section-title">
-        Counting the moments ✨
-    </h2>
-
-    <div class="countdown">
-
-        <div class="time">
-            <strong id="days">00</strong>
-            <span>Days</span>
-        </div>
-
-        <div class="time">
-            <strong id="hours">00</strong>
-            <span>Hours</span>
-        </div>
-
-        <div class="time">
-            <strong id="minutes">00</strong>
-            <span>Minutes</span>
-        </div>
-
-        <div class="time">
-            <strong id="seconds">00</strong>
-            <span>Seconds</span>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- VENUE -->
-
-<section class="center">
-
-    <div class="section-label">
-        PARTY DETAILS
-    </div>
-
-    <h2 class="section-title">
-        See you there
-    </h2>
-
-    <div class="venue-grid">
-
-        <div class="venue-card">
-
-            <div class="icon">
-                🕰️
-            </div>
-
-            <h3>
-                Ժամը
-            </h3>
-
-            <p>
-                Հավաքվում ենք<br>
-                19:00-ին
-            </p>
-
-        </div>
-
-
-        <div class="venue-card">
-
-            <div class="icon">
-                ✨
-            </div>
-
-            <h3>
-                Novella Music Hall
-            </h3>
-
-            <p>
-                Եկ միասին տոնենք<br>
-                Լիայի 18-ամյակը 💜
-            </p>
-
-            <a
-                class="map"
-                href="https://www.google.com/maps/search/?api=1&query=Novella+Music+Hall"
-                target="_blank"
-                rel="noopener"
-            >
-                ԲԱՑԵԼ ՔԱՐՏԵԶԸ →
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- DRESS CODE -->
-
-<section class="center">
-
-    <div class="section-label">
-        DRESS CODE
-    </div>
-
-    <h2 class="section-title">
-        A little request
-    </h2>
-
-    <div class="dress-box">
-
-        <div class="dress-title">
-            White or Lavender
-        </div>
-
-        <div class="dress-subtitle">
-            Choose your favorite shade ✨
-        </div>
-
-        <div class="dress-options">
-
-            <div class="dress-option">
-
-                <div class="dress-circle white-circle"></div>
-
-                <h3>
-                    White
-                </h3>
-
-                <p>
-                    PEARL · ELEGANT · PURE
-                </p>
-
-            </div>
-
-
-            <div class="dress-option">
-
-                <div class="dress-circle lavender-circle"></div>
-
-                <h3>
-                    Lavender
-                </h3>
-
-                <p>
-                    SOFT · DREAMY · BEAUTIFUL
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- GALLERY -->
-
-<section class="gallery">
-
-    <div class="section-label">
-        LITTLE MEMORIES
-    </div>
-
-    <h2 class="section-title">
-        A little bit of me 💜
-    </h2>
-
-    <div class="gallery-grid">
-
-        <div class="gallery-card">
-
-            <img
-                src="photo2.jpg"
-                alt="Lia"
-            >
-
-        </div>
-
-
-        <div class="gallery-card">
-
-            <img
-                src="photo3.jpg"
-                alt="Lia"
-            >
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- RSVP -->
-
-<section class="rsvp">
-
-    <div class="section-label">
-        LET ME KNOW
-    </div>
-
-    <h2 class="section-title">
-        Կգա՞ս 💜
-    </h2>
-
-    <div class="rsvp-box">
-
-        <form id="rsvpForm">
-
-            <input
-                class="input"
-                type="text"
-                placeholder="Անուն"
-                required
-            >
-
-            <input
-                class="input"
-                type="text"
-                placeholder="Ազգանուն"
-                required
-            >
-
-            <select required>
-
-                <option value="">
-                    Կկարողանա՞ս գալ
-                </option>
-
-                <option>
-                    Այո, անպայման 💜
-                </option>
-
-                <option>
-                    Ցավոք, չեմ կարող
-                </option>
-
-            </select>
-
-            <button
-                class="submit"
-                type="submit"
-            >
-                ՀԱՍՏԱՏԵԼ ՄԱՍՆԱԿՑՈՒԹՅՈՒՆԸ
-            </button>
-
-        </form>
-
-    </div>
-
-</section>
-
-
-<!-- FOOTER -->
-
-<footer class="footer">
-
-    <div class="footer-heart">
-        ♡
-    </div>
-
-    <div class="footer-title">
-        Սիրով սպասում եմ քեզ
-    </div>
-
-    <div class="footer-small">
-        LIA'S 18TH BIRTHDAY · NOVELLA MUSIC HALL
-    </div>
-
-</footer>
-
+    </footer>
 
 </main>
 
 
 <script>
 
-/*
-=====================================================
-ԲԱՑԵԼ ՀՐԱՎԵՐԸ
-=====================================================
-*/
-
+/* OPEN INVITATION */
 document.addEventListener("DOMContentLoaded", function(){
 
-    const button =
-        document.getElementById("openInvitationButton");
+    const button = document.getElementById("openInvitationButton");
+    const opening = document.getElementById("opening");
 
-    const opening =
-        document.getElementById("opening");
+    button.addEventListener("click", function(){
 
+        opening.classList.add("hide");
+        document.body.classList.remove("no-scroll");
 
-    if(button && opening){
+        setTimeout(function(){
+            opening.style.display = "none";
+        }, 1000);
 
-        button.addEventListener("click", function(){
-
-            opening.classList.add("hide");
-
-            document.body.style.overflowY = "auto";
-
-            setTimeout(function(){
-
-                opening.style.display = "none";
-
-            }, 1000);
-
-        });
-
-    }
-
-
-    /*
-    ================================================
-    RSVP
-    ================================================
-    */
-
-    const form =
-        document.getElementById("rsvpForm");
-
-
-    if(form){
-
-        form.addEventListener("submit",function(event){
-
-            event.preventDefault();
-
-            const button =
-                form.querySelector(".submit");
-
-            button.textContent =
-                "ՇՆՈՐՀԱԿԱԼՈՒԹՅՈՒՆ 💜";
-
-        });
-
-    }
+    });
 
 });
 
 
-/*
-=====================================================
-COUNTDOWN
-=====================================================
-
-Եթե ամսաթիվը փոխես,
-այստեղ էլ փոխիր նույն ամսաթիվը։
-*/
-
-const birthdayDate =
-    new Date("2026-09-18T19:00:00").getTime();
-
+/* COUNTDOWN */
+const targetDate = new Date("2026-09-18T19:00:00").getTime();
 
 function updateCountdown(){
 
-    const now =
-        new Date().getTime();
-
-    const distance =
-        birthdayDate - now;
-
+    const now = new Date().getTime();
+    const distance = targetDate - now;
 
     if(distance <= 0){
 
-        document.getElementById("days").textContent="00";
-
-        document.getElementById("hours").textContent="00";
-
-        document.getElementById("minutes").textContent="00";
-
-        document.getElementById("seconds").textContent="00";
+        document.getElementById("days").textContent = "00";
+        document.getElementById("hours").textContent = "00";
+        document.getElementById("minutes").textContent = "00";
+        document.getElementById("seconds").textContent = "00";
 
         return;
     }
 
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
 
-    const days =
-        Math.floor(
-            distance /
-            (1000 * 60 * 60 * 24)
-        );
+    const hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) /
+        (1000 * 60 * 60)
+    );
 
+    const minutes = Math.floor(
+        (distance % (1000 * 60 * 60)) /
+        (1000 * 60)
+    );
 
-    const hours =
-        Math.floor(
-            (distance %
-            (1000 * 60 * 60 * 24)) /
-            (1000 * 60 * 60)
-        );
-
-
-    const minutes =
-        Math.floor(
-            (distance %
-            (1000 * 60 * 60)) /
-            (1000 * 60)
-        );
-
-
-    const seconds =
-        Math.floor(
-            (distance %
-            (1000 * 60)) /
-            1000
-        );
-
+    const seconds = Math.floor(
+        (distance % (1000 * 60)) /
+        1000
+    );
 
     document.getElementById("days").textContent =
         String(days).padStart(2,"0");
@@ -1669,16 +954,24 @@ function updateCountdown(){
 
     document.getElementById("seconds").textContent =
         String(seconds).padStart(2,"0");
-
 }
 
-
 updateCountdown();
-
 setInterval(updateCountdown,1000);
+
+
+/* RSVP */
+document.getElementById("rsvpForm").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    this.style.display = "none";
+
+    document.getElementById("thanks").style.display = "block";
+
+});
 
 </script>
 
 </body>
 </html>
-```
