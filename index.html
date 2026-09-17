@@ -2,7 +2,8 @@
 <html lang="hy">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
 <title>Լիայի 18-ամյակը</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,6 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Noto+Serif+Armenian:wght@400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -18,73 +20,128 @@
 }
 
 html{
+    width:100%;
+    overflow-x:hidden;
     scroll-behavior:smooth;
 }
 
 body{
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+
     background:
-        radial-gradient(circle at 20% 10%, rgba(210,190,255,.38), transparent 28%),
-        radial-gradient(circle at 80% 25%, rgba(255,255,255,.95), transparent 30%),
+        radial-gradient(circle at 15% 10%,rgba(210,190,255,.40),transparent 28%),
+        radial-gradient(circle at 85% 20%,rgba(255,255,255,.95),transparent 32%),
         linear-gradient(135deg,#eee5ff,#ffffff 48%,#e8dcff);
+
     color:#493b5d;
     font-family:"Noto Serif Armenian",serif;
-    overflow-x:hidden;
 }
 
 body.locked{
     overflow:hidden;
 }
 
-/* Փայլեր */
+/* =========================
+   ՓԱՅԼԵՐ
+========================= */
 
 .sparkles{
     position:fixed;
     inset:0;
     pointer-events:none;
     z-index:2;
+    overflow:hidden;
 }
 
 .sparkle{
     position:absolute;
-    width:5px;
-    height:5px;
-    background:white;
+    width:4px;
+    height:4px;
+    background:#fff;
     border-radius:50%;
-    box-shadow:0 0 12px rgba(255,255,255,.95);
+    box-shadow:0 0 12px #fff;
     animation:twinkle 3s infinite ease-in-out;
 }
 
-.sparkle:nth-child(1){left:8%;top:15%;animation-delay:.2s}
-.sparkle:nth-child(2){left:22%;top:70%;animation-delay:1s}
-.sparkle:nth-child(3){left:38%;top:25%;animation-delay:1.5s}
-.sparkle:nth-child(4){left:58%;top:12%;animation-delay:.7s}
-.sparkle:nth-child(5){left:75%;top:67%;animation-delay:1.8s}
-.sparkle:nth-child(6){left:90%;top:30%;animation-delay:.5s}
-.sparkle:nth-child(7){left:48%;top:88%;animation-delay:1.2s}
+.sparkle:nth-child(1){
+    left:8%;
+    top:15%;
+}
+
+.sparkle:nth-child(2){
+    left:22%;
+    top:70%;
+    animation-delay:1s;
+}
+
+.sparkle:nth-child(3){
+    left:38%;
+    top:25%;
+    animation-delay:1.5s;
+}
+
+.sparkle:nth-child(4){
+    left:58%;
+    top:12%;
+    animation-delay:.7s;
+}
+
+.sparkle:nth-child(5){
+    left:75%;
+    top:67%;
+    animation-delay:1.8s;
+}
+
+.sparkle:nth-child(6){
+    left:90%;
+    top:30%;
+    animation-delay:.5s;
+}
+
+.sparkle:nth-child(7){
+    left:48%;
+    top:88%;
+    animation-delay:1.2s;
+}
 
 @keyframes twinkle{
+
     0%,100%{
         opacity:.15;
         transform:scale(.7);
     }
+
     50%{
         opacity:1;
         transform:scale(1.4);
     }
 }
 
-/* Բացվող էջ */
+/* =========================
+   ԲԱՑՄԱՆ ԷՋ
+========================= */
 
 .opening{
     position:fixed;
     inset:0;
     z-index:1000;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
+    padding:20px;
+
     background:
-        radial-gradient(circle at center,rgba(255,255,255,.98),rgba(226,212,250,.98));
-    transition:opacity 1s ease, visibility 1s ease;
+        radial-gradient(circle at center,
+        rgba(255,255,255,.98),
+        rgba(226,212,250,.98));
+
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
 }
 
 .opening.hide{
@@ -94,20 +151,31 @@ body.locked{
 }
 
 .open-card{
-    width:min(90%,520px);
-    min-height:650px;
-    padding:55px 35px;
+    width:min(520px,100%);
+    min-height:620px;
+
+    padding:55px 30px;
+
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
+
     text-align:center;
+
     border-radius:260px 260px 35px 35px;
+
     background:
-        linear-gradient(145deg,rgba(255,255,255,.96),rgba(241,231,255,.92));
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.96),
+            rgba(241,231,255,.92)
+        );
+
     box-shadow:
         0 30px 80px rgba(94,70,125,.22),
         inset 0 0 0 1px rgba(255,255,255,.9);
+
     position:relative;
     overflow:hidden;
 }
@@ -136,7 +204,7 @@ body.locked{
 
 .open-small{
     font-family:"Montserrat",sans-serif;
-    font-size:12px;
+    font-size:11px;
     letter-spacing:5px;
     color:#8c789d;
     margin-bottom:30px;
@@ -145,14 +213,14 @@ body.locked{
 .open-name{
     font-family:"Parisienne",cursive;
     font-size:88px;
-    color:#73558f;
     line-height:1;
+    color:#73558f;
     margin-bottom:12px;
 }
 
 .open-age{
     font-family:"Cormorant Garamond",serif;
-    font-size:26px;
+    font-size:25px;
     letter-spacing:5px;
     color:#75627f;
     margin-bottom:45px;
@@ -161,84 +229,113 @@ body.locked{
 .open-button{
     border:1px solid rgba(119,91,145,.35);
     background:rgba(255,255,255,.75);
+
     color:#604774;
-    padding:17px 42px;
+
+    padding:17px 38px;
+
     border-radius:50px;
+
     font-family:"Montserrat",sans-serif;
     letter-spacing:2px;
+
     cursor:pointer;
+
     transition:.35s;
-    box-shadow:0 10px 30px rgba(104,76,130,.12);
+
+    box-shadow:
+        0 10px 30px rgba(104,76,130,.12);
 }
 
 .open-button:hover{
     transform:translateY(-3px);
     background:#fff;
-    box-shadow:0 15px 35px rgba(104,76,130,.2);
 }
 
-/* Ընդհանուր */
+/* =========================
+   ԸՆԴՀԱՆՈՒՐ
+========================= */
 
 section{
     position:relative;
     z-index:3;
+    width:100%;
+    max-width:100%;
     padding:100px 20px;
 }
 
 .container{
-    width:min(1100px,94%);
+    width:min(1100px,100%);
+    max-width:100%;
     margin:auto;
 }
 
 .section-title{
     text-align:center;
+
     font-family:"Cormorant Garamond",serif;
     font-size:42px;
     font-weight:500;
     letter-spacing:2px;
+
     color:#624875;
+
     margin-bottom:55px;
 }
 
 .section-title::after{
     content:"";
+
     display:block;
+
     width:55px;
     height:1px;
+
     margin:18px auto 0;
+
     background:#a88dbb;
 }
 
-/* Գլխավոր */
+/* =========================
+   ԳԼԽԱՎՈՐ
+========================= */
 
 .hero{
     min-height:100vh;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     padding-top:70px;
 }
 
 .hero-inner{
-    text-align:center;
     width:min(900px,100%);
+    text-align:center;
 }
 
 .hero-photo{
-    width:min(650px,92vw);
+    width:min(650px,100%);
+
     margin:0 auto 40px;
+
     position:relative;
 }
 
 .hero-photo img{
     display:block;
+
     width:100%;
+    max-width:100%;
     height:auto;
-    max-height:650px;
+
     object-fit:cover;
+
     border-radius:25px;
+
     box-shadow:
-        0 25px 70px rgba(86,60,110,.2);
+        0 25px 70px rgba(86,60,110,.20);
 }
 
 .hero-sub{
@@ -251,20 +348,27 @@ section{
 
 .hero-name{
     font-family:"Parisienne",cursive;
+
     font-size:100px;
     line-height:1;
+
     color:#71528c;
 }
 
 .hero-age{
     font-family:"Cormorant Garamond",serif;
+
     font-size:32px;
     letter-spacing:6px;
+
     color:#77627e;
+
     margin-top:15px;
 }
 
-/* Ծաղիկներ */
+/* =========================
+   ԾԱՂԻԿՆԵՐ
+========================= */
 
 .flower{
     position:absolute;
@@ -297,335 +401,19 @@ section{
     font-size:32px;
 }
 
-/* Ամսաթիվ */
-
-.date-section{
-    padding-top:80px;
-}
-
-.date-card{
-    width:min(750px,100%);
-    margin:auto;
-    padding:65px 30px;
-    text-align:center;
-    border-radius:45px;
-    background:rgba(255,255,255,.63);
-    border:1px solid rgba(164,135,190,.25);
-    box-shadow:0 25px 70px rgba(91,68,115,.12);
-    backdrop-filter:blur(12px);
-}
-
-.date-label{
-    font-family:"Montserrat",sans-serif;
-    font-size:11px;
-    letter-spacing:4px;
-    color:#9782a4;
-    margin-bottom:18px;
-}
-
-.date-number{
-    font-family:"Cormorant Garamond",serif;
-    font-size:100px;
-    line-height:.8;
-    color:#76568e;
-}
-
-.date-month{
-    font-family:"Cormorant Garamond",serif;
-    font-size:38px;
-    color:#735d7d;
-    margin-top:18px;
-}
-
-.date-year{
-    font-family:"Montserrat",sans-serif;
-    letter-spacing:5px;
-    font-size:14px;
-    color:#9b8aa5;
-    margin-top:10px;
-}
-
-/* Հաշվիչ */
-
-.counter{
-    margin-top:45px;
-    display:flex;
-    justify-content:center;
-    gap:14px;
-    flex-wrap:wrap;
-}
-
-.counter-box{
-    width:120px;
-    min-height:105px;
-    border-radius:25px;
-    background:rgba(255,255,255,.7);
-    border:1px solid rgba(153,126,178,.2);
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    box-shadow:0 12px 30px rgba(87,62,111,.08);
-}
-
-.counter-number{
-    font-family:"Cormorant Garamond",serif;
-    font-size:43px;
-    color:#73518b;
-}
-
-.counter-label{
-    font-family:"Montserrat",sans-serif;
-    font-size:9px;
-    letter-spacing:2px;
-    color:#9b8ba5;
-    margin-top:5px;
-}
-
-/* Տեղեկություն */
-
-.info-section{
-    padding-top:70px;
-}
-
-.info-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:25px;
-    max-width:800px;
-    margin:auto;
-}
-
-.info-card{
-    padding:45px 25px;
-    text-align:center;
-    background:rgba(255,255,255,.65);
-    border:1px solid rgba(157,129,180,.22);
-    border-radius:35px;
-    box-shadow:0 20px 50px rgba(89,65,112,.08);
-}
-
-.info-card.full{
-    grid-column:1/-1;
-}
-
-.info-title{
-    font-family:"Montserrat",sans-serif;
-    font-size:10px;
-    letter-spacing:3px;
-    color:#a08ba9;
-    margin-bottom:15px;
-}
-
-.info-value{
-    font-family:"Cormorant Garamond",serif;
-    font-size:34px;
-    color:#674b78;
-}
-
-.map-link{
-    text-decoration:none;
-    color:#674b78;
-    transition:.3s;
-}
-
-.map-link:hover{
-    color:#9a72b5;
-}
-
-/* Dress code */
-
-.dress{
-    text-align:center;
-}
-
-.dress-card{
-    max-width:800px;
-    margin:auto;
-    padding:60px 30px;
-    border-radius:45px;
-    background:rgba(255,255,255,.7);
-    box-shadow:0 25px 70px rgba(89,65,112,.1);
-}
-
-.dress-icons{
-    font-size:48px;
-    margin-bottom:25px;
-    letter-spacing:15px;
-}
-
-.dress-text{
-    font-family:"Cormorant Garamond",serif;
-    font-size:32px;
-    line-height:1.5;
-    color:#6a5078;
-}
-
-/* Հիշարժան պահեր */
-
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:28px;
-    max-width:950px;
-    margin:auto;
-}
-
-.gallery-item{
-    overflow:hidden;
-    border-radius:32px;
-    background:white;
-    box-shadow:0 20px 55px rgba(84,60,105,.15);
-}
-
-.gallery-item img{
-    width:100%;
-    height:520px;
-    object-fit:cover;
-    display:block;
-    transition:transform .8s ease;
-}
-
-.gallery-item:hover img{
-    transform:scale(1.04);
-}
-
-/* RSVP */
-
-.rsvp{
-    padding-bottom:80px;
-}
-
-.rsvp-box{
-    max-width:650px;
-    margin:auto;
-    padding:55px 35px;
-    border-radius:40px;
-    background:rgba(255,255,255,.7);
-    border:1px solid rgba(160,132,183,.2);
-    box-shadow:0 25px 70px rgba(88,65,109,.12);
-}
-
-.form-group{
-    margin-bottom:20px;
-}
-
-.form-group label{
-    display:block;
-    font-family:"Montserrat",sans-serif;
-    font-size:11px;
-    letter-spacing:2px;
-    color:#927e9d;
-    margin-bottom:8px;
-}
-
-.form-group input,
-.form-group select{
-    width:100%;
-    padding:16px 18px;
-    border:1px solid rgba(139,112,159,.25);
-    border-radius:18px;
-    background:rgba(255,255,255,.75);
-    outline:none;
-    color:#604c6c;
-    font-family:"Noto Serif Armenian",serif;
-    font-size:15px;
-}
-
-.form-group input:focus,
-.form-group select:focus{
-    border-color:#a48ab6;
-    box-shadow:0 0 0 3px rgba(164,138,182,.1);
-}
-
-.submit-button{
-    width:100%;
-    border:0;
-    padding:17px;
-    border-radius:25px;
-    background:#806097;
-    color:white;
-    font-family:"Montserrat",sans-serif;
-    letter-spacing:2px;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.submit-button:hover{
-    background:#6d4e83;
-    transform:translateY(-2px);
-}
-
-.thank-you{
-    display:none;
-    text-align:center;
-    font-family:"Cormorant Garamond",serif;
-    font-size:27px;
-    color:#745785;
-    padding-top:20px;
-}
-
-/* Footer */
-
-footer{
-    padding:70px 20px 35px;
-    text-align:center;
-    position:relative;
-    z-index:3;
-}
-
-.footer-main{
-    font-family:"Cormorant Garamond",serif;
-    font-size:48px;
-    color:#6f4f83;
-    margin-bottom:15px;
-}
-
-.footer-name{
-    font-family:"Parisienne",cursive;
-    font-size:55px;
-    color:#87669a;
-    margin-bottom:35px;
-}
-
-.footer-contact{
-    font-family:"Montserrat",sans-serif;
-    font-size:10px;
-    letter-spacing:1.5px;
-    color:#a08ca9;
-    line-height:2;
-}
-
-.footer-contact a{
-    color:inherit;
-    text-decoration:none;
-}
-
-/* Երաժշտություն */
-
-.music-button{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    z-index:100;
-    width:52px;
-    height:52px;
-    border-radius:50%;
-    border:1px solid rgba(125,94,150,.25);
-    background:rgba(255,255,255,.85);
-    color:#76578b;
-    cursor:pointer;
-    box-shadow:0 10px 30px rgba(83,61,105,.15);
-    font-size:19px;
-}
-
-/* Սրտիկներ */
+/* =========================
+   ՍՐՏԻԿՆԵՐ
+========================= */
 
 .heart{
     position:absolute;
+
     color:rgba(143,111,164,.18);
+
     font-size:50px;
+
     animation:floatHeart 5s ease-in-out infinite;
+
     pointer-events:none;
 }
 
@@ -641,43 +429,586 @@ footer{
 }
 
 @keyframes floatHeart{
+
     0%,100%{
         transform:translateY(0) rotate(-5deg);
     }
+
     50%{
         transform:translateY(-18px) rotate(5deg);
     }
 }
 
-/* Մոբայլ */
+/* =========================
+   ԱՄՍԱԹԻՎ
+========================= */
+
+.date-section{
+    padding-top:80px;
+}
+
+.date-card{
+    width:min(750px,100%);
+    max-width:100%;
+
+    margin:auto;
+
+    padding:65px 30px;
+
+    text-align:center;
+
+    border-radius:45px;
+
+    background:rgba(255,255,255,.63);
+
+    border:1px solid rgba(164,135,190,.25);
+
+    box-shadow:
+        0 25px 70px rgba(91,68,115,.12);
+
+    backdrop-filter:blur(12px);
+}
+
+.date-label{
+    font-family:"Montserrat",sans-serif;
+
+    font-size:11px;
+    letter-spacing:4px;
+
+    color:#9782a4;
+
+    margin-bottom:18px;
+}
+
+.date-number{
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:100px;
+    line-height:.8;
+
+    color:#76568e;
+}
+
+.date-month{
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:38px;
+
+    color:#735d7d;
+
+    margin-top:18px;
+}
+
+.date-year{
+    font-family:"Montserrat",sans-serif;
+
+    letter-spacing:5px;
+    font-size:14px;
+
+    color:#9b8aa5;
+
+    margin-top:10px;
+}
+
+/* =========================
+   ՀԱՇՎԻՉ
+========================= */
+
+.counter{
+    width:100%;
+    max-width:100%;
+
+    margin-top:45px;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap:12px;
+}
+
+.counter-box{
+    width:100%;
+    min-width:0;
+
+    min-height:105px;
+
+    padding:8px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.7);
+
+    border:1px solid rgba(153,126,178,.2);
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    box-shadow:
+        0 12px 30px rgba(87,62,111,.08);
+}
+
+.counter-number{
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:43px;
+    line-height:1;
+
+    color:#73518b;
+
+    white-space:nowrap;
+}
+
+.counter-label{
+    font-family:"Montserrat",sans-serif;
+
+    font-size:9px;
+    letter-spacing:1px;
+
+    color:#9b8ba5;
+
+    margin-top:7px;
+
+    white-space:nowrap;
+}
+
+/* =========================
+   ՏԵՂԵԿՈՒԹՅՈՒՆ
+========================= */
+
+.info-section{
+    padding-top:70px;
+}
+
+.info-grid{
+    width:100%;
+    max-width:800px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:25px;
+}
+
+.info-card{
+    min-width:0;
+
+    padding:45px 20px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.65);
+
+    border:1px solid rgba(157,129,180,.22);
+
+    border-radius:35px;
+
+    box-shadow:
+        0 20px 50px rgba(89,65,112,.08);
+}
+
+.info-card.full{
+    grid-column:1/-1;
+}
+
+.info-title{
+    font-family:"Montserrat",sans-serif;
+
+    font-size:10px;
+    letter-spacing:3px;
+
+    color:#a08ba9;
+
+    margin-bottom:15px;
+}
+
+.info-value{
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:34px;
+
+    color:#674b78;
+
+    word-break:break-word;
+}
+
+.map-link{
+    color:#674b78;
+    text-decoration:none;
+}
+
+/* =========================
+   DRESS CODE
+========================= */
+
+.dress{
+    text-align:center;
+}
+
+.dress-card{
+    width:100%;
+    max-width:800px;
+
+    margin:auto;
+
+    padding:60px 30px;
+
+    border-radius:45px;
+
+    background:rgba(255,255,255,.7);
+
+    box-shadow:
+        0 25px 70px rgba(89,65,112,.10);
+}
+
+.dress-icons{
+    font-size:48px;
+
+    margin-bottom:25px;
+
+    letter-spacing:15px;
+}
+
+.dress-text{
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:32px;
+    line-height:1.5;
+
+    color:#6a5078;
+}
+
+/* =========================
+   ՆԿԱՐՆԵՐ
+========================= */
+
+.gallery{
+    width:100%;
+    max-width:950px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:28px;
+}
+
+.gallery-item{
+    min-width:0;
+
+    overflow:hidden;
+
+    border-radius:32px;
+
+    background:#fff;
+
+    box-shadow:
+        0 20px 55px rgba(84,60,105,.15);
+}
+
+.gallery-item img{
+    display:block;
+
+    width:100%;
+    max-width:100%;
+
+    height:520px;
+
+    object-fit:cover;
+
+    transition:transform .8s ease;
+}
+
+.gallery-item:hover img{
+    transform:scale(1.04);
+}
+
+/* =========================
+   RSVP
+========================= */
+
+.rsvp{
+    padding-bottom:80px;
+}
+
+.rsvp-box{
+    width:100%;
+    max-width:650px;
+
+    margin:auto;
+
+    padding:55px 35px;
+
+    border-radius:40px;
+
+    background:rgba(255,255,255,.7);
+
+    border:1px solid rgba(160,132,183,.2);
+
+    box-shadow:
+        0 25px 70px rgba(88,65,109,.12);
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+.form-group label{
+    display:block;
+
+    font-family:"Montserrat",sans-serif;
+
+    font-size:11px;
+    letter-spacing:2px;
+
+    color:#927e9d;
+
+    margin-bottom:8px;
+}
+
+.form-group input,
+.form-group select{
+    display:block;
+
+    width:100%;
+    max-width:100%;
+
+    padding:16px 18px;
+
+    border:1px solid rgba(139,112,159,.25);
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.75);
+
+    outline:none;
+
+    color:#604c6c;
+
+    font-family:"Noto Serif Armenian",serif;
+
+    font-size:15px;
+}
+
+.submit-button{
+    display:block;
+
+    width:100%;
+    max-width:100%;
+
+    border:0;
+
+    padding:17px;
+
+    border-radius:25px;
+
+    background:#806097;
+
+    color:white;
+
+    font-family:"Montserrat",sans-serif;
+
+    letter-spacing:2px;
+
+    cursor:pointer;
+}
+
+.thank-you{
+    display:none;
+
+    text-align:center;
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:27px;
+
+    color:#745785;
+
+    padding-top:20px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    width:100%;
+    max-width:100%;
+
+    padding:70px 20px 35px;
+
+    text-align:center;
+
+    position:relative;
+    z-index:3;
+}
+
+.footer-main{
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:48px;
+
+    color:#6f4f83;
+
+    margin-bottom:15px;
+}
+
+.footer-name{
+    font-family:"Parisienne",cursive;
+
+    font-size:55px;
+
+    color:#87669a;
+
+    margin-bottom:35px;
+}
+
+.footer-contact{
+    font-family:"Montserrat",sans-serif;
+
+    font-size:10px;
+
+    letter-spacing:1.5px;
+
+    color:#a08ca9;
+
+    line-height:2;
+}
+
+.footer-contact a{
+    color:inherit;
+    text-decoration:none;
+}
+
+/* =========================
+   ԵՐԱԺՇՏՈՒԹՅՈՒՆ
+========================= */
+
+.music-button{
+    position:fixed;
+
+    right:20px;
+    bottom:20px;
+
+    z-index:100;
+
+    width:52px;
+    height:52px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(125,94,150,.25);
+
+    background:rgba(255,255,255,.88);
+
+    color:#76578b;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 10px 30px rgba(83,61,105,.15);
+
+    font-size:19px;
+}
+
+
+/* =====================================================
+   ՄՈԲԱՅԼ
+===================================================== */
 
 @media(max-width:700px){
 
+    html,
+    body{
+        width:100%;
+        max-width:100%;
+        overflow-x:hidden;
+    }
+
     section{
-        padding:75px 15px;
+        width:100%;
+        max-width:100%;
+
+        padding:70px 14px;
+    }
+
+    .container{
+        width:100%;
+        max-width:100%;
+    }
+
+    /* Բացում */
+
+    .opening{
+        padding:15px;
     }
 
     .open-card{
-        min-height:590px;
-        padding:45px 25px;
+        width:100%;
+        max-width:420px;
+
+        min-height:570px;
+
+        padding:45px 20px;
+
+        border-radius:210px 210px 30px 30px;
     }
 
     .open-name{
-        font-size:70px;
+        font-size:72px;
     }
+
+    .open-age{
+        font-size:22px;
+        letter-spacing:4px;
+    }
+
+    .open-button{
+        padding:16px 28px;
+        font-size:11px;
+    }
+
+    /* Գլխավոր */
 
     .hero{
         min-height:auto;
-        padding-top:80px;
+
+        padding-top:75px;
+        padding-bottom:65px;
+    }
+
+    .hero-inner{
+        width:100%;
+        max-width:100%;
     }
 
     .hero-photo{
-        width:94vw;
-        margin-bottom:30px;
+        width:100%;
+        max-width:100%;
+
+        margin-bottom:28px;
     }
 
     .hero-photo img{
+        width:100%;
+        max-width:100%;
+
         border-radius:18px;
+    }
+
+    .hero-sub{
+        font-size:9px;
+        letter-spacing:3px;
     }
 
     .hero-name{
@@ -685,18 +1016,33 @@ footer{
     }
 
     .hero-age{
-        font-size:25px;
+        font-size:26px;
         letter-spacing:4px;
     }
 
+    /* Վերնագրեր */
+
     .section-title{
         font-size:34px;
+        letter-spacing:1px;
+
         margin-bottom:38px;
     }
 
+    /* Ամսաթիվ */
+
     .date-card{
-        padding:50px 20px;
-        border-radius:32px;
+        width:100%;
+        max-width:100%;
+
+        padding:48px 12px;
+
+        border-radius:30px;
+    }
+
+    .date-label{
+        font-size:8px;
+        letter-spacing:2px;
     }
 
     .date-number{
@@ -707,27 +1053,85 @@ footer{
         font-size:31px;
     }
 
+    .date-year{
+        font-size:11px;
+        letter-spacing:3px;
+    }
+
+    /* ՀԱՇՎԻՉԸ
+       4 բլոկ՝ մեկ շարքում,
+       առանց հորիզոնական overflow-ի
+    */
+
     .counter{
-        gap:8px;
+        width:100%;
+        max-width:100%;
+
+        display:grid;
+
+        grid-template-columns:
+            repeat(4,minmax(0,1fr));
+
+        gap:5px;
+
+        margin-top:32px;
     }
 
     .counter-box{
-        width:76px;
-        min-height:90px;
-        border-radius:18px;
+        width:100%;
+        min-width:0;
+
+        min-height:78px;
+
+        padding:7px 2px;
+
+        border-radius:15px;
     }
 
     .counter-number{
-        font-size:32px;
+        width:100%;
+
+        font-size:27px;
+
+        line-height:1;
+
+        text-align:center;
+
+        white-space:nowrap;
     }
 
     .counter-label{
-        font-size:7px;
-        letter-spacing:1px;
+        width:100%;
+
+        font-size:6px;
+
+        letter-spacing:0;
+
+        text-align:center;
+
+        white-space:nowrap;
+
+        margin-top:6px;
     }
 
+    /* Տեղեկություն */
+
     .info-grid{
+        width:100%;
+        max-width:100%;
+
         grid-template-columns:1fr;
+
+        gap:15px;
+    }
+
+    .info-card{
+        width:100%;
+        max-width:100%;
+
+        padding:35px 15px;
+
+        border-radius:28px;
     }
 
     .info-card.full{
@@ -735,11 +1139,18 @@ footer{
     }
 
     .info-value{
-        font-size:29px;
+        font-size:28px;
     }
 
+    /* Dress */
+
     .dress-card{
-        padding:45px 20px;
+        width:100%;
+        max-width:100%;
+
+        padding:45px 18px;
+
+        border-radius:30px;
     }
 
     .dress-icons{
@@ -748,46 +1159,139 @@ footer{
     }
 
     .dress-text{
-        font-size:26px;
+        font-size:25px;
     }
 
+    /* Նկարներ */
+
     .gallery{
+        width:100%;
+        max-width:100%;
+
         grid-template-columns:1fr;
+
         gap:18px;
     }
 
+    .gallery-item{
+        width:100%;
+        max-width:100%;
+
+        border-radius:25px;
+    }
+
     .gallery-item img{
+        width:100%;
+        max-width:100%;
+
         height:auto;
-        max-height:none;
-        aspect-ratio:4/5;
+
+        aspect-ratio:4 / 5;
+
         object-fit:cover;
     }
 
+    /* RSVP */
+
     .rsvp-box{
-        padding:40px 20px;
+        width:100%;
+        max-width:100%;
+
+        padding:40px 18px;
+
         border-radius:30px;
+    }
+
+    .form-group input,
+    .form-group select{
+        width:100%;
+        max-width:100%;
+
+        font-size:14px;
+    }
+
+    /* Footer */
+
+    footer{
+        width:100%;
+        max-width:100%;
+
+        padding:60px 15px 30px;
     }
 
     .footer-main{
         font-size:38px;
+        line-height:1.2;
     }
 
     .footer-name{
         font-size:43px;
     }
 
-    .music-button{
-        right:15px;
-        bottom:15px;
+    .footer-contact{
+        font-size:8px;
+        letter-spacing:1px;
     }
+
+    /* Երաժշտություն */
+
+    .music-button{
+        width:48px;
+        height:48px;
+
+        right:14px;
+        bottom:14px;
+    }
+
 }
+
+
+/* Փոքր հեռախոսներ */
+
+@media(max-width:380px){
+
+    .counter{
+        gap:4px;
+    }
+
+    .counter-box{
+        min-height:72px;
+        padding:5px 1px;
+        border-radius:13px;
+    }
+
+    .counter-number{
+        font-size:24px;
+    }
+
+    .counter-label{
+        font-size:5px;
+    }
+
+    .date-card{
+        padding-left:9px;
+        padding-right:9px;
+    }
+
+    .hero-name{
+        font-size:65px;
+    }
+
+}
+
 </style>
 </head>
 
+
 <body class="locked">
 
-<!-- Փայլեր -->
+
+<!-- =========================
+     ՓԱՅԼԵՐ
+========================= -->
+
 <div class="sparkles">
+
     <span class="sparkle"></span>
     <span class="sparkle"></span>
     <span class="sparkle"></span>
@@ -795,20 +1299,34 @@ footer{
     <span class="sparkle"></span>
     <span class="sparkle"></span>
     <span class="sparkle"></span>
+
 </div>
 
-<!-- Բացման էջ -->
+
+<!-- =========================
+     ԲԱՑՄԱՆ ԷՋ
+========================= -->
+
 <div class="opening" id="opening">
 
     <div class="open-card">
 
-        <div class="open-small">ՀՐԱՎԵՐ</div>
+        <div class="open-small">
+            ՀՐԱՎԵՐ
+        </div>
 
-        <div class="open-name">Լիա</div>
+        <div class="open-name">
+            Լիա
+        </div>
 
-        <div class="open-age">18 ՏԱՐԵԿԱՆ</div>
+        <div class="open-age">
+            18 ՏԱՐԵԿԱՆ
+        </div>
 
-        <button class="open-button" id="openButton">
+        <button
+            class="open-button"
+            id="openButton"
+        >
             ԲԱՑԵԼ ՀՐԱՎԵՐԸ
         </button>
 
@@ -816,17 +1334,35 @@ footer{
 
 </div>
 
-<!-- Երաժշտություն -->
-<audio id="birthdayMusic" loop preload="auto">
-    <source src="./song.mp3" type="audio/mpeg">
+
+<!-- =========================
+     ԵՐԱԺՇՏՈՒԹՅՈՒՆ
+========================= -->
+
+<audio
+    id="birthdayMusic"
+    loop
+    preload="auto"
+>
+    <source
+        src="./song.mp3"
+        type="audio/mpeg"
+    >
 </audio>
 
-<button class="music-button" id="musicButton" aria-label="Երաժշտություն">
+<button
+    class="music-button"
+    id="musicButton"
+    aria-label="Երաժշտություն"
+>
     ♫
 </button>
 
 
-<!-- Գլխավոր -->
+<!-- =========================
+     ԳԼԽԱՎՈՐ
+========================= -->
+
 <section class="hero">
 
     <div class="flower one">✿</div>
@@ -840,7 +1376,12 @@ footer{
     <div class="hero-inner">
 
         <div class="hero-photo">
-            <img src="./photo.jpg" alt="Լիա">
+
+            <img
+                src="./photo.jpg"
+                alt="Լիա"
+            >
+
         </div>
 
         <div class="hero-sub">
@@ -860,7 +1401,10 @@ footer{
 </section>
 
 
-<!-- Ամսաթիվ -->
+<!-- =========================
+     ԱՄՍԱԹԻՎ
+========================= -->
+
 <section class="date-section">
 
     <div class="container">
@@ -887,26 +1431,75 @@ footer{
                 2026
             </div>
 
-            <div class="counter" id="counter">
+
+            <!-- Հաշվիչ -->
+
+            <div
+                class="counter"
+                id="counter"
+            >
 
                 <div class="counter-box">
-                    <div class="counter-number" id="days">0</div>
-                    <div class="counter-label">ՕՐ</div>
+
+                    <div
+                        class="counter-number"
+                        id="days"
+                    >
+                        0
+                    </div>
+
+                    <div class="counter-label">
+                        ՕՐ
+                    </div>
+
                 </div>
 
-                <div class="counter-box">
-                    <div class="counter-number" id="hours">0</div>
-                    <div class="counter-label">ԺԱՄ</div>
-                </div>
 
                 <div class="counter-box">
-                    <div class="counter-number" id="minutes">0</div>
-                    <div class="counter-label">ՐՈՊԵ</div>
+
+                    <div
+                        class="counter-number"
+                        id="hours"
+                    >
+                        0
+                    </div>
+
+                    <div class="counter-label">
+                        ԺԱՄ
+                    </div>
+
                 </div>
 
+
                 <div class="counter-box">
-                    <div class="counter-number" id="seconds">0</div>
-                    <div class="counter-label">ՎԱՅՐԿՅԱՆ</div>
+
+                    <div
+                        class="counter-number"
+                        id="minutes"
+                    >
+                        0
+                    </div>
+
+                    <div class="counter-label">
+                        ՐՈՊԵ
+                    </div>
+
+                </div>
+
+
+                <div class="counter-box">
+
+                    <div
+                        class="counter-number"
+                        id="seconds"
+                    >
+                        0
+                    </div>
+
+                    <div class="counter-label">
+                        ՎԱՅՐԿՅԱՆ
+                    </div>
+
                 </div>
 
             </div>
@@ -918,7 +1511,10 @@ footer{
 </section>
 
 
-<!-- Տեղեկություն -->
+<!-- =========================
+     ՏԵՂԵԿՈՒԹՅՈՒՆ
+========================= -->
+
 <section class="info-section">
 
     <div class="container">
@@ -928,6 +1524,7 @@ footer{
         </h2>
 
         <div class="info-grid">
+
 
             <div class="info-card">
 
@@ -963,6 +1560,7 @@ footer{
 
             </div>
 
+
         </div>
 
     </div>
@@ -970,7 +1568,10 @@ footer{
 </section>
 
 
-<!-- Dress code -->
+<!-- =========================
+     DRESS CODE
+========================= -->
+
 <section class="dress">
 
     <div class="container">
@@ -997,7 +1598,10 @@ footer{
 </section>
 
 
-<!-- Հիշարժան պահեր -->
+<!-- =========================
+     ՀԻՇԱՐԺԱՆ ՊԱՀԵՐ
+========================= -->
+
 <section>
 
     <div class="container">
@@ -1009,11 +1613,22 @@ footer{
         <div class="gallery">
 
             <div class="gallery-item">
-                <img src="./photo2.jpg" alt="Լիա">
+
+                <img
+                    src="./photo2.jpg"
+                    alt="Լիա"
+                >
+
             </div>
 
+
             <div class="gallery-item">
-                <img src="./photo3.jpg" alt="Լիա">
+
+                <img
+                    src="./photo3.jpg"
+                    alt="Լիա"
+                >
+
             </div>
 
         </div>
@@ -1023,7 +1638,10 @@ footer{
 </section>
 
 
-<!-- RSVP -->
+<!-- =========================
+     RSVP
+========================= -->
+
 <section class="rsvp">
 
     <div class="container">
@@ -1032,9 +1650,11 @@ footer{
             ՀԱՍՏԱՏԵԼ ՄԱՍՆԱԿՑՈՒԹՅՈՒՆԸ
         </h2>
 
+
         <div class="rsvp-box">
 
             <form id="rsvpForm">
+
 
                 <div class="form-group">
 
@@ -1074,7 +1694,10 @@ footer{
                         ԿԿԱՐՈՂԱՆԱ՞Ք ԳԱԼ
                     </label>
 
-                    <select id="attendance" required>
+                    <select
+                        id="attendance"
+                        required
+                    >
 
                         <option value="">
                             Ընտրեք
@@ -1103,7 +1726,10 @@ footer{
             </form>
 
 
-            <div class="thank-you" id="thankYou">
+            <div
+                class="thank-you"
+                id="thankYou"
+            >
                 Շնորհակալություն ❤️
             </div>
 
@@ -1114,7 +1740,10 @@ footer{
 </section>
 
 
-<!-- Footer -->
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
     <div class="footer-main">
@@ -1134,7 +1763,11 @@ footer{
         </div>
 
         <div>
-            <a href="https://eventto.am" target="_blank">
+            <a
+                href="https://eventto.am"
+                target="_blank"
+                rel="noopener"
+            >
                 eventto.am
             </a>
         </div>
@@ -1150,72 +1783,90 @@ footer{
    ԲԱՑԵԼ ՀՐԱՎԵՐԸ
 ========================= */
 
-const opening = document.getElementById("opening");
-const openButton = document.getElementById("openButton");
-const music = document.getElementById("birthdayMusic");
-const musicButton = document.getElementById("musicButton");
+const opening =
+    document.getElementById("opening");
 
-let musicPlaying = false;
+const openButton =
+    document.getElementById("openButton");
 
-openButton.addEventListener("click", async function(){
+const music =
+    document.getElementById("birthdayMusic");
 
-    opening.classList.add("hide");
-    document.body.classList.remove("locked");
-
-    try{
-
-        music.load();
-
-        await music.play();
-
-        musicPlaying = true;
-        musicButton.textContent = "♫";
-
-    }catch(error){
-
-        musicPlaying = false;
-        musicButton.textContent = "♫";
-
-    }
-
-});
+const musicButton =
+    document.getElementById("musicButton");
 
 
-/* =========================
-   ԵՐԱԺՇՏՈՒԹՅՈՒՆ
-========================= */
+openButton.addEventListener(
+    "click",
+    async function(){
 
-musicButton.addEventListener("click", async function(){
+        opening.classList.add("hide");
 
-    if(music.paused){
+        document.body.classList.remove("locked");
+
+
+        /*
+         * Երաժշտությունը փորձում ենք միացնել
+         * հենց օգտատիրոջ սեղմումից հետո։
+         */
 
         try{
 
+            music.load();
+
             await music.play();
 
-            musicPlaying = true;
             musicButton.textContent = "♫";
 
         }catch(error){
 
-            musicButton.textContent = "×";
-
-            setTimeout(function(){
-                musicButton.textContent = "♫";
-            },1500);
+            musicButton.textContent = "♫";
 
         }
 
-    }else{
+    }
+);
 
-        music.pause();
 
-        musicPlaying = false;
-        musicButton.textContent = "♩";
+/* =========================
+   ԵՐԱԺՇՏՈՒԹՅԱՆ ԿՈՃԱԿ
+========================= */
+
+musicButton.addEventListener(
+    "click",
+    async function(){
+
+        if(music.paused){
+
+            try{
+
+                await music.play();
+
+                musicButton.textContent = "♫";
+
+            }catch(error){
+
+                musicButton.textContent = "×";
+
+                setTimeout(
+                    function(){
+                        musicButton.textContent = "♫";
+                    },
+                    1500
+                );
+
+            }
+
+        }else{
+
+            music.pause();
+
+            musicButton.textContent = "♩";
+
+        }
 
     }
-
-});
+);
 
 
 /* =========================
@@ -1223,138 +1874,239 @@ musicButton.addEventListener("click", async function(){
 ========================= */
 
 /*
-   Ամսաթիվը ՄՆՈՒՄ Է 15 ՍԵՊՏԵՄԲԵՐ 2026։
+   Հիմնական ամսաթիվը՝
+   15 սեպտեմբեր 2026, 19:00։
 
-   Եթե օրը դեռ չի եկել՝ հաշվիչը ցույց է տալիս,
-   թե քանի օր/ժամ/րոպե/վայրկյան է մնացել։
+   Ամսաթիվը էջում ՄԻՇՏ մնում է
+   15 Սեպտեմբեր 2026։
 
-   Եթե օրը արդեն անցել է՝ հաշվիչը ՉԻ ԿԱՆԳՆՈՒՄ։
-   Այն սկսում է հաշվել, թե որքան ժամանակ է անցել
-   սեպտեմբերի 15-ից։
+   Եթե ամսաթիվը դեռ չի եկել՝
+   ցույց է տալիս մնացած ժամանակը։
+
+   Եթե արդեն անցել է՝
+   սկսում է ցույց տալ անցած ժամանակը։
 */
 
-const eventDate = new Date("2026-09-15T19:00:00").getTime();
+const eventDate =
+    new Date("2026-09-15T19:00:00").getTime();
+
 
 function updateCounter(){
 
-    const now = new Date().getTime();
+    const now =
+        new Date().getTime();
 
-    let difference = eventDate - now;
 
-    const daysElement = document.getElementById("days");
-    const hoursElement = document.getElementById("hours");
-    const minutesElement = document.getElementById("minutes");
-    const secondsElement = document.getElementById("seconds");
+    let difference =
+        eventDate - now;
+
+
+    const daysElement =
+        document.getElementById("days");
+
+    const hoursElement =
+        document.getElementById("hours");
+
+    const minutesElement =
+        document.getElementById("minutes");
+
+    const secondsElement =
+        document.getElementById("seconds");
+
+
+    /*
+       Եթե դեռ չի եկել
+    */
 
     if(difference >= 0){
 
-        const days = Math.floor(
-            difference / (1000 * 60 * 60 * 24)
-        );
+        const days =
+            Math.floor(
+                difference /
+                (1000 * 60 * 60 * 24)
+            );
 
-        const hours = Math.floor(
-            (difference % (1000 * 60 * 60 * 24))
-            / (1000 * 60 * 60)
-        );
 
-        const minutes = Math.floor(
-            (difference % (1000 * 60 * 60))
-            / (1000 * 60)
-        );
+        const hours =
+            Math.floor(
+                (difference %
+                (1000 * 60 * 60 * 24))
+                /
+                (1000 * 60 * 60)
+            );
 
-        const seconds = Math.floor(
-            (difference % (1000 * 60))
-            / 1000
-        );
 
-        daysElement.textContent = days;
-        hoursElement.textContent = hours;
-        minutesElement.textContent = minutes;
-        secondsElement.textContent = seconds;
+        const minutes =
+            Math.floor(
+                (difference %
+                (1000 * 60 * 60))
+                /
+                (1000 * 60)
+            );
 
-    }else{
 
-        difference = Math.abs(difference);
+        const seconds =
+            Math.floor(
+                (difference %
+                (1000 * 60))
+                /
+                1000
+            );
 
-        const days = Math.floor(
-            difference / (1000 * 60 * 60 * 24)
-        );
 
-        const hours = Math.floor(
-            (difference % (1000 * 60 * 60 * 24))
-            / (1000 * 60 * 60)
-        );
+        daysElement.textContent =
+            days;
 
-        const minutes = Math.floor(
-            (difference % (1000 * 60 * 60))
-            / (1000 * 60)
-        );
+        hoursElement.textContent =
+            hours;
 
-        const seconds = Math.floor(
-            (difference % (1000 * 60))
-            / 1000
-        );
+        minutesElement.textContent =
+            minutes;
 
-        daysElement.textContent = days;
-        hoursElement.textContent = hours;
-        minutesElement.textContent = minutes;
-        secondsElement.textContent = seconds;
+        secondsElement.textContent =
+            seconds;
+
+    }
+
+
+    /*
+       Եթե արդեն անցել է
+       հաշվիչը շարունակում է գնալ
+    */
+
+    else{
+
+        difference =
+            Math.abs(difference);
+
+
+        const days =
+            Math.floor(
+                difference /
+                (1000 * 60 * 60 * 24)
+            );
+
+
+        const hours =
+            Math.floor(
+                (difference %
+                (1000 * 60 * 60 * 24))
+                /
+                (1000 * 60 * 60)
+            );
+
+
+        const minutes =
+            Math.floor(
+                (difference %
+                (1000 * 60 * 60))
+                /
+                (1000 * 60)
+            );
+
+
+        const seconds =
+            Math.floor(
+                (difference %
+                (1000 * 60))
+                /
+                1000
+            );
+
+
+        daysElement.textContent =
+            days;
+
+        hoursElement.textContent =
+            hours;
+
+        minutesElement.textContent =
+            minutes;
+
+        secondsElement.textContent =
+            seconds;
 
     }
 
 }
 
+
+/*
+   Առաջին հաշվարկ
+*/
+
 updateCounter();
 
-setInterval(updateCounter,1000);
+
+/*
+   Ամեն վայրկյան թարմացում
+*/
+
+setInterval(
+    updateCounter,
+    1000
+);
 
 
 /* =========================
    RSVP
 ========================= */
 
-const rsvpForm = document.getElementById("rsvpForm");
-const thankYou = document.getElementById("thankYou");
+const rsvpForm =
+    document.getElementById("rsvpForm");
 
-rsvpForm.addEventListener("submit",function(event){
+const thankYou =
+    document.getElementById("thankYou");
 
-    event.preventDefault();
 
-    rsvpForm.style.display = "none";
-    thankYou.style.display = "block";
+rsvpForm.addEventListener(
+    "submit",
+    function(event){
 
-});
+        event.preventDefault();
+
+        rsvpForm.style.display =
+            "none";
+
+        thankYou.style.display =
+            "block";
+
+    }
+);
 
 
 /* =========================
-   Երաժշտության ՍԽԱԼ
+   ՍՔՐՈԼԻ ՍՐՏԻԿՆԵՐ
 ========================= */
 
-music.addEventListener("error",function(){
+window.addEventListener(
+    "scroll",
+    function(){
 
-    musicButton.style.opacity = "0.55";
+        const hearts =
+            document.querySelectorAll(".heart");
 
-});
+
+        hearts.forEach(
+            function(heart,index){
+
+                const movement =
+                    window.scrollY *
+                    (index === 0
+                        ? 0.035
+                        : -0.025);
 
 
-/* =========================
-   ՍՔՐՈԼԻ ՓՈՔՐ ԱՆԻՄԱՑԻԱ
-========================= */
+                heart.style.transform =
+                    "translateY(" +
+                    movement +
+                    "px)";
 
-window.addEventListener("scroll",function(){
+            }
+        );
 
-    const hearts = document.querySelectorAll(".heart");
-
-    hearts.forEach(function(heart,index){
-
-        const movement = window.scrollY * (index === 0 ? 0.035 : -0.025);
-
-        heart.style.transform =
-            "translateY(" + movement + "px)";
-
-    });
-
-});
+    }
+);
 
 </script>
 
