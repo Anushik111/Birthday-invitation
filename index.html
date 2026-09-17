@@ -34,31 +34,15 @@ body.no-scroll{
     overflow:hidden;
 }
 
-/* BACKGROUND */
-
 body::before{
     content:"";
     position:fixed;
     inset:0;
     pointer-events:none;
-
     background:
-        radial-gradient(
-            circle at 10% 15%,
-            rgba(194,168,219,.22),
-            transparent 25%
-        ),
-        radial-gradient(
-            circle at 90% 30%,
-            rgba(214,194,229,.2),
-            transparent 28%
-        ),
-        radial-gradient(
-            circle at 50% 90%,
-            rgba(201,178,222,.18),
-            transparent 30%
-        );
-
+        radial-gradient(circle at 10% 15%,rgba(194,168,219,.22),transparent 25%),
+        radial-gradient(circle at 90% 30%,rgba(214,194,229,.2),transparent 28%),
+        radial-gradient(circle at 50% 90%,rgba(201,178,222,.18),transparent 30%);
     z-index:-2;
 }
 
@@ -68,22 +52,12 @@ body::before{
     position:fixed;
     inset:0;
     z-index:9999;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     background:
-        radial-gradient(
-            circle at center,
-            #ffffff 0%,
-            #faf6fc 45%,
-            #eee5f4 100%
-        );
-
-    transition:
-        opacity 1s ease,
-        visibility 1s ease;
+        radial-gradient(circle at center,#fff 0%,#faf6fc 45%,#eee5f4 100%);
+    transition:opacity 1s ease,visibility 1s ease;
 }
 
 .opening.hide{
@@ -95,7 +69,6 @@ body::before{
 .opening::after{
     content:"";
     position:absolute;
-
     border:1px solid rgba(167,137,193,.35);
     border-radius:50%;
 }
@@ -143,20 +116,13 @@ body::before{
     border:1px solid #aa8bbb;
     background:rgba(255,255,255,.8);
     color:#725481;
-
     padding:15px 34px;
-
     border-radius:50px;
-
     font-family:'Noto Serif Armenian',sans-serif;
     font-size:14px;
-
     cursor:pointer;
-
     transition:.35s ease;
-
-    box-shadow:
-        0 10px 30px rgba(115,82,129,.12);
+    box-shadow:0 10px 30px rgba(115,82,129,.12);
 }
 
 .open-button:hover{
@@ -183,42 +149,14 @@ body::before{
     font-size:25px;
 }
 
-.pearl{
-    width:8px;
-    height:8px;
-
-    border-radius:50%;
-
-    background:white;
-
-    border:1px solid #d8c9df;
-
-    box-shadow:
-        0 2px 7px rgba(130,100,145,.18);
-}
-
-/* MAIN */
-
-main{
-    opacity:1;
-}
-
-section{
-    position:relative;
-    padding:100px 20px;
-}
-
 /* HERO */
 
 .hero{
     min-height:100vh;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     text-align:center;
-
     overflow:hidden;
 }
 
@@ -230,16 +168,10 @@ section{
 .hero-photo{
     width:min(500px,90vw);
     height:min(620px,72vh);
-
-    margin:
-        0 auto 35px;
-
-    border-radius:
-        250px 250px 30px 30px;
-
+    margin:0 auto 35px;
+    border-radius:250px 250px 30px 30px;
     overflow:hidden;
     position:relative;
-
     box-shadow:
         0 25px 60px rgba(92,68,105,.15),
         0 0 0 12px rgba(255,255,255,.65);
@@ -248,51 +180,39 @@ section{
 .hero-photo img{
     width:100%;
     height:100%;
-
     object-fit:cover;
-
     display:block;
 }
 
 .hero-photo::after{
     content:"";
-
     position:absolute;
     inset:0;
-
-    background:
-        linear-gradient(
-            to bottom,
-            transparent 55%,
-            rgba(69,48,78,.13)
-        );
+    background:linear-gradient(
+        to bottom,
+        transparent 55%,
+        rgba(69,48,78,.13)
+    );
 }
 
 .hero-subtitle{
     font-size:12px;
     letter-spacing:5px;
     color:#9b7cad;
-
     margin-bottom:10px;
 }
 
 .hero-name{
     font-family:'Parisienne',cursive;
-
     font-size:100px;
-
     color:#7d5d8f;
-
     line-height:1;
 }
 
 .hero-age{
     font-size:17px;
-
     letter-spacing:6px;
-
     color:#77647f;
-
     margin-top:15px;
 }
 
@@ -305,49 +225,32 @@ section{
 
 .date-card{
     width:min(700px,92vw);
-
     margin:auto;
-
     padding:45px 25px;
-
-    border:
-        1px solid rgba(155,124,173,.35);
-
+    border:1px solid rgba(155,124,173,.35);
     border-radius:30px;
-
-    background:
-        rgba(255,255,255,.62);
-
-    box-shadow:
-        0 20px 60px rgba(105,77,119,.08);
-
+    background:rgba(255,255,255,.62);
+    box-shadow:0 20px 60px rgba(105,77,119,.08);
     backdrop-filter:blur(8px);
 }
 
 .date-small{
     font-size:12px;
     letter-spacing:4px;
-
     color:#9b7cad;
-
     margin-bottom:15px;
 }
 
 .date-number{
     font-family:'Cormorant Garamond',serif;
-
     font-size:90px;
-
     color:#836294;
-
     line-height:.9;
 }
 
 .date-month{
     font-size:18px;
-
     letter-spacing:5px;
-
     margin-top:15px;
 }
 
@@ -355,13 +258,9 @@ section{
 
 .countdown{
     display:flex;
-
     justify-content:center;
-
     gap:30px;
-
     margin-top:35px;
-
     flex-wrap:wrap;
 }
 
@@ -371,17 +270,13 @@ section{
 
 .count-number{
     font-family:'Cormorant Garamond',serif;
-
     font-size:45px;
-
     color:#806091;
 }
 
 .count-label{
     font-size:10px;
-
     letter-spacing:2px;
-
     color:#9d8aa5;
 }
 
@@ -393,31 +288,19 @@ section{
 
 .section-title{
     font-size:13px;
-
     letter-spacing:5px;
-
     color:#9877a9;
-
     margin-bottom:40px;
 }
 
 .venue-card{
     width:min(600px,92vw);
-
     margin:auto;
-
     padding:50px 25px;
-
-    background:
-        rgba(255,255,255,.7);
-
-    border:
-        1px solid rgba(158,126,177,.3);
-
+    background:rgba(255,255,255,.7);
+    border:1px solid rgba(158,126,177,.3);
     border-radius:35px;
-
-    box-shadow:
-        0 25px 60px rgba(96,70,110,.08);
+    box-shadow:0 25px 60px rgba(96,70,110,.08);
 }
 
 .venue-row{
@@ -430,27 +313,20 @@ section{
 
 .venue-label{
     font-size:11px;
-
     letter-spacing:4px;
-
     color:#a083ad;
-
     margin-bottom:9px;
 }
 
 .venue-value{
     font-family:'Cormorant Garamond',serif;
-
     font-size:38px;
-
     color:#70527e;
 }
 
 .venue-link{
     text-decoration:none;
-
     color:#70527e;
-
     transition:.3s;
 }
 
@@ -458,7 +334,7 @@ section{
     color:#9c79ae;
 }
 
-/* DRESS CODE */
+/* DRESS */
 
 .dress-section{
     text-align:center;
@@ -466,59 +342,39 @@ section{
 
 .dress-card{
     width:min(650px,92vw);
-
     margin:auto;
-
     padding:50px 25px;
-
-    background:
-        rgba(255,255,255,.72);
-
+    background:rgba(255,255,255,.72);
     border-radius:35px;
-
-    border:
-        1px solid rgba(158,126,177,.3);
+    border:1px solid rgba(158,126,177,.3);
 }
 
 .dress-text{
     font-size:17px;
-
     line-height:2;
-
     color:#66556e;
-
     margin-bottom:35px;
 }
 
 .dress-colors{
     display:flex;
-
     justify-content:center;
-
     gap:70px;
 }
 
 .dress-color{
     display:flex;
-
     flex-direction:column;
-
     align-items:center;
-
     gap:12px;
 }
 
 .color-circle{
     width:65px;
     height:65px;
-
     border-radius:50%;
-
-    border:
-        1px solid #d5c8dc;
-
-    box-shadow:
-        0 8px 25px rgba(100,75,115,.12);
+    border:1px solid #d5c8dc;
+    box-shadow:0 8px 25px rgba(100,75,115,.12);
 }
 
 .white{
@@ -531,7 +387,6 @@ section{
 
 .color-name{
     font-size:13px;
-
     color:#71577d;
 }
 
@@ -543,36 +398,24 @@ section{
 
 .gallery-grid{
     width:min(800px,94vw);
-
     margin:auto;
-
     display:grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
+    grid-template-columns:repeat(2,1fr);
     gap:22px;
 }
 
 .gallery-item{
     aspect-ratio:4/5;
-
     border-radius:25px;
-
     overflow:hidden;
-
-    box-shadow:
-        0 15px 35px rgba(94,68,108,.1);
+    box-shadow:0 15px 35px rgba(94,68,108,.1);
 }
 
 .gallery-item img{
     width:100%;
     height:100%;
-
     object-fit:cover;
-
     display:block;
-
     transition:.6s ease;
 }
 
@@ -588,18 +431,11 @@ section{
 
 .rsvp-card{
     width:min(600px,92vw);
-
     margin:auto;
-
     padding:45px 25px;
-
-    background:
-        rgba(255,255,255,.75);
-
+    background:rgba(255,255,255,.75);
     border-radius:35px;
-
-    border:
-        1px solid rgba(158,126,177,.3);
+    border:1px solid rgba(158,126,177,.3);
 }
 
 .form-group{
@@ -609,22 +445,12 @@ section{
 .form-group input,
 .form-group select{
     width:100%;
-
     padding:15px 18px;
-
-    border:
-        1px solid #d9cce0;
-
+    border:1px solid #d9cce0;
     border-radius:15px;
-
     background:#fff;
-
     color:#55435e;
-
-    font-family:
-        'Noto Serif Armenian',
-        sans-serif;
-
+    font-family:'Noto Serif Armenian',sans-serif;
     outline:none;
 }
 
@@ -635,39 +461,25 @@ section{
 
 .submit-button{
     margin-top:10px;
-
     border:none;
-
     background:#806091;
-
     color:white;
-
     padding:15px 35px;
-
     border-radius:50px;
-
-    font-family:
-        'Noto Serif Armenian',
-        sans-serif;
-
+    font-family:'Noto Serif Armenian',sans-serif;
     cursor:pointer;
-
     transition:.3s;
 }
 
 .submit-button:hover{
     background:#6e507d;
-
     transform:translateY(-2px);
 }
 
 .thanks{
     display:none;
-
     margin-top:25px;
-
     color:#806091;
-
     font-size:16px;
 }
 
@@ -675,46 +487,84 @@ section{
 
 footer{
     text-align:center;
-
-    padding:
-        90px 20px 45px;
+    padding:90px 20px 45px;
 }
 
 .footer-main{
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
+    font-family:'Cormorant Garamond',serif;
     font-size:42px;
-
     color:#795986;
-
     margin-bottom:20px;
 }
 
 .footer-name{
-    font-family:
-        'Parisienne',
-        cursive;
-
+    font-family:'Parisienne',cursive;
     font-size:55px;
-
     color:#9172a0;
-
     margin-bottom:45px;
 }
 
 .contact{
     font-size:11px;
-
     letter-spacing:1px;
-
     color:#9c8aa3;
-
     line-height:2;
 }
 
-/* FLOATING DECOR */
+/* ԵՐԳԻ ԿՈՃԱԿ */
+
+.music-button{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    z-index:5000;
+
+    width:52px;
+    height:52px;
+
+    border-radius:50%;
+    border:1px solid rgba(128,96,145,.4);
+
+    background:rgba(255,255,255,.9);
+    color:#806091;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 10px 30px rgba(90,65,105,.18);
+
+    transition:.3s;
+}
+
+.music-button:hover{
+    transform:scale(1.08);
+}
+
+.music-button.playing{
+    animation:musicPulse 1.5s infinite;
+}
+
+@keyframes musicPulse{
+
+    0%,100%{
+        box-shadow:
+            0 10px 30px rgba(90,65,105,.18);
+    }
+
+    50%{
+        box-shadow:
+            0 10px 35px rgba(128,96,145,.42);
+    }
+
+}
+
+/* FLOATING */
 
 .float1{
     top:12%;
@@ -750,19 +600,14 @@ footer{
 
     .hero{
         min-height:auto;
-
         padding-top:70px;
     }
 
     .hero-photo{
         width:88vw;
-
         height:115vw;
-
         max-height:none;
-
-        border-radius:
-            180px 180px 25px 25px;
+        border-radius:180px 180px 25px 25px;
     }
 
     .hero-name{
@@ -771,7 +616,6 @@ footer{
 
     .hero-age{
         font-size:14px;
-
         letter-spacing:4px;
     }
 
@@ -801,9 +645,7 @@ footer{
 
     .gallery-grid{
         grid-template-columns:1fr;
-
         width:88vw;
-
         gap:18px;
     }
 
@@ -826,6 +668,7 @@ footer{
     .float2{
         right:2%;
     }
+
 }
 
 </style>
@@ -892,6 +735,26 @@ footer{
     </div>
 
 </div>
+
+
+<!-- ԵՐԳ -->
+
+<audio
+    id="birthdayMusic"
+    loop
+    preload="auto"
+>
+    <source src="song.mp3" type="audio/mpeg">
+</audio>
+
+
+<button
+    class="music-button"
+    id="musicButton"
+    aria-label="Երաժշտություն"
+>
+    ♫
+</button>
 
 
 <main id="mainContent">
@@ -1186,7 +1049,6 @@ footer{
 
         <form id="rsvpForm">
 
-
             <div class="form-group">
 
                 <input
@@ -1237,7 +1099,6 @@ footer{
                 ՀԱՍՏԱՏԵԼ ՄԱՍՆԱԿՑՈՒԹՅՈՒՆԸ
             </button>
 
-
         </form>
 
 
@@ -1268,11 +1129,8 @@ footer{
 
 
     <div class="contact">
-
         our.eventto@gmail.com<br>
-
         eventto.am
-
     </div>
 
 </footer>
@@ -1283,7 +1141,7 @@ footer{
 
 <script>
 
-/* ԲԱՑԵԼ ՀՐԱՎԵՐԸ */
+/* ԲԱՑԵԼ ՀՐԱՎԵՐԸ + ԵՐԳ */
 
 document.addEventListener(
     "DOMContentLoaded",
@@ -1299,6 +1157,16 @@ document.addEventListener(
                 "opening"
             );
 
+        const music =
+            document.getElementById(
+                "birthdayMusic"
+            );
+
+        const musicButton =
+            document.getElementById(
+                "musicButton"
+            );
+
 
         button.addEventListener(
             "click",
@@ -1311,6 +1179,34 @@ document.addEventListener(
                 );
 
 
+                /*
+                 * Բրաուզերները թույլ են տալիս
+                 * ավտոմատ երաժշտություն,
+                 * քանի որ այն միանում է
+                 * օգտատիրոջ սեղմումից հետո։
+                 */
+
+                music.volume = 0.55;
+
+                music.play()
+                    .then(function(){
+
+                        musicButton.classList.add(
+                            "playing"
+                        );
+
+                        musicButton.textContent = "♫";
+
+                    })
+                    .catch(function(){
+
+                        musicButton.classList.remove(
+                            "playing"
+                        );
+
+                    });
+
+
                 setTimeout(
                     function(){
 
@@ -1320,6 +1216,43 @@ document.addEventListener(
                     },
                     1000
                 );
+
+            }
+        );
+
+
+        /* ԵՐԳԻ ՄԻԱՑՈՒՄ / ԱՆՋԱՏՈՒՄ */
+
+        musicButton.addEventListener(
+            "click",
+            function(){
+
+                if(music.paused){
+
+                    music.play()
+                        .then(function(){
+
+                            musicButton.classList.add(
+                                "playing"
+                            );
+
+                            musicButton.textContent =
+                                "♫";
+
+                        });
+
+                }else{
+
+                    music.pause();
+
+                    musicButton.classList.remove(
+                        "playing"
+                    );
+
+                    musicButton.textContent =
+                        "♪";
+
+                }
 
             }
         );
@@ -1341,32 +1274,23 @@ function updateCountdown(){
     const now =
         new Date().getTime();
 
-
     const distance =
         targetDate - now;
 
 
     if(distance <= 0){
 
-        document.getElementById(
-            "days"
-        ).textContent = "00";
+        document.getElementById("days")
+            .textContent = "00";
 
+        document.getElementById("hours")
+            .textContent = "00";
 
-        document.getElementById(
-            "hours"
-        ).textContent = "00";
+        document.getElementById("minutes")
+            .textContent = "00";
 
-
-        document.getElementById(
-            "minutes"
-        ).textContent = "00";
-
-
-        document.getElementById(
-            "seconds"
-        ).textContent = "00";
-
+        document.getElementById("seconds")
+            .textContent = "00";
 
         return;
     }
@@ -1409,27 +1333,23 @@ function updateCountdown(){
         );
 
 
-    document.getElementById(
-        "days"
-    ).textContent =
+    document.getElementById("days")
+        .textContent =
         String(days).padStart(2,"0");
 
 
-    document.getElementById(
-        "hours"
-    ).textContent =
+    document.getElementById("hours")
+        .textContent =
         String(hours).padStart(2,"0");
 
 
-    document.getElementById(
-        "minutes"
-    ).textContent =
+    document.getElementById("minutes")
+        .textContent =
         String(minutes).padStart(2,"0");
 
 
-    document.getElementById(
-        "seconds"
-    ).textContent =
+    document.getElementById("seconds")
+        .textContent =
         String(seconds).padStart(2,"0");
 
 }
@@ -1453,10 +1373,8 @@ document
 
             e.preventDefault();
 
-
             this.style.display =
                 "none";
-
 
             document.getElementById(
                 "thanks"
